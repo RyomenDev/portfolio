@@ -160,10 +160,10 @@ const experiences = {
 };
 
 const seoData = {
-  title: "Akash Mishra | Full Stack Developer",
+  title: "Akash Mishra | Full Stack Developer | MERN Stack Expert",
   author: "Akash Mishra",
   description:
-    "Akash Mishra is a Full Stack Developer specializing in JavaScript, React, Node.js, and MongoDB. Check out his portfolio and latest projects.",
+    "Akash Mishra is a Full Stack Developer specializing in JavaScript, React, Node.js, and MongoDB. Explore his portfolio, projects, and skills, and connect for opportunities.",
   url: "https://akashmishra-portfolio.vercel.app/",
   image: profileImage,
   keywords: [
@@ -171,14 +171,15 @@ const seoData = {
     "Full Stack Developer",
     "Frontend Developer",
     "Backend Developer",
+    "MERN Stack",
     "JavaScript Developer",
     "React",
     "Node.js",
     "MongoDB",
     "Web Development",
     "Portfolio",
-    "IIT Ranchi",
-    "Indian Institute of information Technology",
+    "IIIT Ranchi",
+    "Indian Institute of Information Technology",
   ],
 };
 
