@@ -159,6 +159,29 @@ const experiences = {
   ],
 };
 
+const seoData = {
+  title: "Akash Mishra | Full Stack Developer",
+  author: "Akash Mishra",
+  description:
+    "Akash Mishra is a Full Stack Developer specializing in JavaScript, React, Node.js, and MongoDB. Check out his portfolio and latest projects.",
+  url: "https://akashmishra-portfolio.vercel.app/",
+  image: profileImage,
+  keywords: [
+    "Akash Mishra",
+    "Full Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "JavaScript Developer",
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Web Development",
+    "Portfolio",
+    "IIT Ranchi",
+    "Indian Institute of information Technology",
+  ],
+};
+
 export {
   navBar,
   mainBody,
@@ -168,4 +191,5 @@ export {
   leadership,
   getInTouch,
   experiences,
+  seoData,
 };

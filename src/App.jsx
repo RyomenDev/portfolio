@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SEO from "./components/SEO";
 
 import {
   navBar,
@@ -9,6 +10,7 @@ import {
   getInTouch,
   experiences,
   skills,
+  seoData,
 } from "./editable-stuff/config";
 
 import MainBody from "./components/home/MainBody";
@@ -65,6 +67,7 @@ const App = () => {
 
   return (
     <>
+      <SEO seoData={seoData} />
       {/* Navbar */}
       <Navbar ref={titleRef} />
 
