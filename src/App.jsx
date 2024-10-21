@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SEO from "./components/SEO";
-
 import {
   navBar,
   mainBody,
@@ -13,48 +12,48 @@ import {
   seoData,
 } from "./editable-stuff/config";
 
-import MainBody from "./components/home/MainBody";
-import AboutMe from "./components/home/AboutMe";
-import Project from "./components/home/Project";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-
-import GetInTouch from "./components/home/GetInTouch";
-import Experience from "./components/home/Experience";
-import SkillsSection from "./components/home/skillsSection";
+// Lazy load components to reduce initial bundle size
+const MainBody = React.lazy(() => import("./components/home/MainBody"));
+const AboutMe = React.lazy(() => import("./components/home/AboutMe"));
+const Project = React.lazy(() => import("./components/home/Project"));
+const Footer = React.lazy(() => import("./components/Footer"));
+const Navbar = React.lazy(() => import("./components/Navbar"));
+const GetInTouch = React.lazy(() => import("./components/home/GetInTouch"));
+const Experience = React.lazy(() => import("./components/home/Experience"));
+const SkillsSection = React.lazy(() =>
+  import("./components/home/skillsSection")
+);
 
 // Home Component: Displays the main content of the homepage
 const Home = React.forwardRef((props, ref) => (
   <div className="pt-16">
-    {" "}
     {/* Padding for navbar height */}
-    <MainBody
-      gradient={mainBody.gradientColors}
-      title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
-      message={mainBody.message}
-      icons={mainBody.icons}
-      ref={ref}
-    />
-    {about.show && (
-      <AboutMe
-        heading={about.heading}
-        message={about.message}
-        profileImage={about.imageLink}
-        imgSize={about.imageSize}
-        resume={about.resume}
+    <Suspense fallback={<div>Loading Main Content...</div>}>
+      <MainBody
+        gradient={mainBody.gradientColors}
+        title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
+        message={mainBody.message}
+        icons={mainBody.icons}
+        ref={ref}
       />
-    )}
-    {/* Experience Section */}
-    <Experience experiences={experiences} />
-    {/* Projects Section */}
-    <Project
-      heading={repos.heading}
-      username={repos.gitHubUsername}
-      length={repos.reposLength}
-      specific={repos.specificRepos}
-    />
-    {/* Skills Section */}
-    <SkillsSection skillsSection={skills} />
+      {about.show && (
+        <AboutMe
+          heading={about.heading}
+          message={about.message}
+          profileImage={about.imageLink}
+          imgSize={about.imageSize}
+          resume={about.resume}
+        />
+      )}
+      <Experience experiences={experiences} />
+      <Project
+        heading={repos.heading}
+        username={repos.gitHubUsername}
+        length={repos.reposLength}
+        specific={repos.specificRepos}
+      />
+      <SkillsSection skillsSection={skills} />
+    </Suspense>
   </div>
 ));
 
@@ -68,19 +67,23 @@ const App = () => {
   return (
     <>
       <SEO seoData={seoData} />
-      {/* Navbar */}
-      <Navbar ref={titleRef} />
+      <Suspense fallback={<div>Loading Navbar...</div>}>
+        <Navbar ref={titleRef} />
+      </Suspense>
 
       <div className="content-wrapper">
         <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <Routes>
-            <Route path="/" element={<Home ref={titleRef} />} />
-          </Routes>
+          <Suspense fallback={<div>Loading Page...</div>}>
+            <Routes>
+              <Route path="/" element={<Home ref={titleRef} />} />
+            </Routes>
+          </Suspense>
 
-          {/* Footer Section */}
-          <Footer>
-            {getInTouch.show && <GetInTouch getInTouch={getInTouch} />}
-          </Footer>
+          <Suspense fallback={<div>Loading Footer...</div>}>
+            <Footer>
+              {getInTouch.show && <GetInTouch getInTouch={getInTouch} />}
+            </Footer>
+          </Suspense>
         </BrowserRouter>
       </div>
     </>

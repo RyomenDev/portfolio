@@ -1,28 +1,20 @@
-import React, { useState } from "react";
-// import { useScrollPosition } from "../hooks/useScrollPosition";
+import React, { useState, useEffect, useRef } from "react";
 import useResizeObserver from "../hooks/useResizeObserver";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
 const Navigation = React.forwardRef((props, ref) => {
   const [isTop, setIsTop] = useState(true);
-  const navbarMenuRef = React.useRef();
+  const navbarMenuRef = useRef();
   const navbarDimensions = useResizeObserver(navbarMenuRef);
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
 
-  //   useScrollPosition(
-  //     ({ currPos }) => {
-  //       if (!navbarDimensions) return;
-  //       setIsTop(
-  //         currPos.y + ref.current.offsetTop - navbarDimensions.bottom <= 5
-  //       );
-  //     },
-  //     [navBottom]
-  //   );
+  useEffect(() => {
+    if (!navbarDimensions || !ref.current) return;
 
-  React.useEffect(() => {
-    if (!navbarDimensions) return;
-    setIsTop(navBottom - ref.current.offsetTop >= 0);
+    // Adjust isTop based on navbar position
+    const offsetTop = ref.current.offsetTop;
+    setIsTop(navBottom - offsetTop >= 0);
   }, [navBottom, navbarDimensions, ref]);
 
   return (
@@ -40,7 +32,7 @@ const Navigation = React.forwardRef((props, ref) => {
           <NavLink
             className="text-gray-800 hover:text-blue-600"
             href="#projects"
-            aria-current={isTop ? undefined : "page"} // Added for accessibility
+            aria-current={!isTop ? "page" : undefined}
           >
             Projects
           </NavLink>
@@ -50,7 +42,7 @@ const Navigation = React.forwardRef((props, ref) => {
           href={about.resume}
           target="_blank"
           rel="noreferrer noopener"
-          aria-current={isTop ? undefined : "page"} // Added for accessibility
+          aria-current={isTop ? undefined : "page"}
         >
           Resume
         </NavLink>
@@ -58,7 +50,7 @@ const Navigation = React.forwardRef((props, ref) => {
           <NavLink
             className="text-gray-800 hover:text-blue-600"
             href="#aboutme"
-            aria-current={isTop ? undefined : "page"} // Added for accessibility
+            aria-current={!isTop ? "page" : undefined}
           >
             About
           </NavLink>
@@ -67,7 +59,7 @@ const Navigation = React.forwardRef((props, ref) => {
           <NavLink
             className="text-gray-800 hover:text-blue-600"
             href="#skills"
-            aria-current={isTop ? undefined : "page"} // Added for accessibility
+            aria-current={!isTop ? "page" : undefined}
           >
             Skills
           </NavLink>
