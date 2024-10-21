@@ -10,7 +10,7 @@ const GetInTouch = ({ getInTouch }) => {
           {heading}
         </h2>
         <p className="text-lg text-center pb-3 text-gray-600">
-          {message},{" "}
+          {message}{" "}
           <a
             className="text-blue-600 underline hover:text-blue-800 transition"
             href={`mailto:${email}`}

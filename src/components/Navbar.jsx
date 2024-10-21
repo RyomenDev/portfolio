@@ -24,7 +24,7 @@ const Navigation = React.forwardRef((props, ref) => {
         !isTop ? "bg-white shadow-md z-50" : "bg-transparent"
       }`}
     >
-      <a className="text-xl font-bold text-gray-900" href="#home">
+      <a className="text-xl font-bold text-gray-900 px-10" href="#home">
         {`${mainBody.firstName} ${mainBody.lastName}`}
       </a>
       <div className="flex items-center space-x-4">

@@ -28,7 +28,6 @@ const Project = ({ heading, username, length, specific = [] }) => {
         specific.map(async (repoName) => {
           try {
             const specificRepo = await fetchSpecificRepo(username, repoName);
-            // console.log(specificRepo);
             repoList.push(specificRepo);
           } catch (error) {
             console.error(
@@ -47,12 +46,18 @@ const Project = ({ heading, username, length, specific = [] }) => {
   }, [username, specific]);
 
   useEffect(() => {
-    fetchRepos(); // This will run only once when the component mounts
-  }, [fetchRepos]); // Added fetchRepos to the dependency array
+    fetchRepos();
+  }, [fetchRepos]);
 
   return (
-    <Jumbotron fluid id="projects" className="bg-gray-100 m-0 p-6">
-      <h2 className="text-4xl font-bold pb-5 text-center">{heading}</h2>
+    <Jumbotron
+      fluid
+      id="projects"
+      className="bg-gray-100 m-0 p-8 rounded-lg shadow-md"
+    >
+      <h2 className="text-5xl font-bold pb-5 text-center text-black shadow-md m-2">
+        {heading}
+      </h2>
       <ProjectCardGrid
         projects={projectsArray.length > 0 ? projectsArray : dummyProjectsArr}
       />
@@ -62,7 +67,7 @@ const Project = ({ heading, username, length, specific = [] }) => {
           href={`https://github.com/${username}?tab=repositories`}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200"
+          className="bg-blue-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-blue-700 transition-transform duration-200 transform hover:scale-105"
         >
           Show More on GitHub
         </a>

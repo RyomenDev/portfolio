@@ -67,24 +67,26 @@ const App = () => {
   return (
     <>
       <SEO seoData={seoData} />
-      <Suspense fallback={<div>Loading Navbar...</div>}>
-        <Navbar ref={titleRef} />
-      </Suspense>
+      <div className="px-10 bg-gray-200 ">
+        <Suspense fallback={<div>Loading Navbar...</div>}>
+          <Navbar ref={titleRef} />
+        </Suspense>
 
-      <div className="content-wrapper">
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <Suspense fallback={<div>Loading Page...</div>}>
-            <Routes>
-              <Route path="/" element={<Home ref={titleRef} />} />
-            </Routes>
-          </Suspense>
+        <div className="content-wrapper ">
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <Suspense fallback={<div>Loading Page...</div>}>
+              <Routes>
+                <Route path="/" element={<Home ref={titleRef} />} />
+              </Routes>
+            </Suspense>
 
-          <Suspense fallback={<div>Loading Footer...</div>}>
-            <Footer>
-              {getInTouch.show && <GetInTouch getInTouch={getInTouch} />}
-            </Footer>
-          </Suspense>
-        </BrowserRouter>
+            <Suspense fallback={<div>Loading Footer...</div>}>
+              <Footer>
+                {getInTouch.show && <GetInTouch getInTouch={getInTouch} />}
+              </Footer>
+            </Suspense>
+          </BrowserRouter>
+        </div>
       </div>
     </>
   );

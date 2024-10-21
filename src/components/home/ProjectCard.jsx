@@ -10,19 +10,31 @@ const ProjectCard = ({ value }) => {
     stargazers_count,
     languages_url,
     pushed_at,
+    homepage,
   } = value;
 
   return (
-    <div className="shadow-lg p-4 mb-5 bg-white rounded-lg transition-transform hover:scale-105 h-full">
+    <div className="shadow-lg p-6 mb-5 bg-white rounded-lg transition-transform transform hover:scale-105 h-full border border-gray-200">
       <div>
-        <h5 className="text-xl font-semibold mb-2 line-clamp-1">
-          {name || <Skeleton />}
+        {/* Styled Name Section */}
+        <h5 className="relative text-2xl font-bold mb-2 text-black line-clamp-1 transition-colors duration-300 group">
+          <span className="absolute inset-0 bg-blue-50 rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+          <a
+            href={homepage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 group-hover:text-blue-800 transition-colors duration-300"
+          >
+            {name || <Skeleton />}
+          </a>
         </h5>
-        <p className="line-clamp-3 mb-4">
+
+        <p className="line-clamp-3 mb-4 text-gray-700 text-base">
           {description ? description : <Skeleton count={3} />}
         </p>
+
         {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
-        <hr className="my-4" />
+        <hr className="my-4 border-gray-300" />
         {languages_url ? (
           <Language languages_url={languages_url} repo_url={svn_url} />
         ) : (
@@ -43,7 +55,7 @@ const CardButtons = ({ svn_url }) => {
     <div className="flex gap-2 mb-4">
       <a
         href={`${svn_url}/archive/master.zip`}
-        className="btn btn-outline-secondary flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-100 transition"
+        className="flex-1 bg-gradient-to-r bg-blue-400 py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:bg-blue-700 hover:shadow-lg"
       >
         <i className="fab fa-github" /> Clone Project
       </a>
@@ -51,7 +63,7 @@ const CardButtons = ({ svn_url }) => {
         href={svn_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="btn btn-outline-secondary flex-1 border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-100 transition"
+        className="flex-1 bg-gradient-to-r from-indigo-400 to-purple-400 text-white py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-indigo-700 hover:to-purple-700 hover:shadow-lg"
       >
         <i className="fab fa-github" /> Repo
       </a>
@@ -87,13 +99,13 @@ const Language = ({ languages_url, repo_url }) => {
   const languagesArray = Object.keys(data);
 
   return (
-    <div className="pb-3">
+    <div className="pb-3 text-gray-800">
       {loading ? (
         <Skeleton count={3} />
       ) : error ? (
         <p className="text-red-600">{error}</p>
       ) : languagesArray.length ? (
-        <>
+        <div>
           Languages:{" "}
           {languagesArray.map((language) => (
             <a
@@ -103,13 +115,13 @@ const Language = ({ languages_url, repo_url }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="inline-flex items-center bg-gray-200 text-gray-800 text-xs font-medium mr-1 px-2.5 py-0.5 rounded">
+              <span className="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium mr-1 px-2.5 py-0.5 rounded">
                 {language}:{" "}
                 {Math.trunc((data[language] / total_count) * 1000) / 10}%
               </span>
             </a>
           ))}
-        </>
+        </div>
       ) : (
         "Code yet to be deployed."
       )}
@@ -142,7 +154,7 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
   }, [handleUpdatetime]);
 
   return (
-    <p className="text-gray-600">
+    <p className="text-gray-600 mt-4">
       <a
         href={`${repo_url}/stargazers`}
         target="_blank"
@@ -151,12 +163,12 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
       >
         <span className="mr-4">
           <i className="fab fa-github" /> Stars{" "}
-          <span className="bg-gray-800 text-white rounded-full px-2">
+          <span className="bg-blue-600 text-white rounded-full px-2">
             {star_count}
           </span>
         </span>
       </a>
-      <small className="text-muted">Updated {updated_at}</small>
+      <small className="text-gray-500">Updated {updated_at}</small>
     </p>
   );
 };

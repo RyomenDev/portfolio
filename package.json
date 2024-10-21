@@ -21,8 +21,10 @@
     "react-lottie": "^1.2.4",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.27.0",
+    "react-typewriter-effect": "^1.1.0",
     "react-typist-component": "^1.1.1",
-    "reactstrap": "^9.2.3"
+    "reactstrap": "^9.2.3",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

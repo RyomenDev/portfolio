@@ -1,5 +1,5 @@
 import React from "react";
-import Typist from "react-typist-component";
+import Typewriter from "typewriter-effect";
 import { Jumbotron } from "./migration";
 
 const MainBody = React.forwardRef(
@@ -10,9 +10,16 @@ const MainBody = React.forwardRef(
           <h1 ref={ref} className="text-6xl font-bold text-black ">
             {title}
           </h1>
-          <Typist>
-            <div className="text-lg text-black my-4 ">{message}</div>
-          </Typist>
+          <Typewriter
+            options={{
+              strings: [message],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 50,
+              delay: 100,
+              cursor: "|",
+            }}
+          />
           <div className="flex justify-center space-x-4">
             {icons.map((icon, index) => (
               <a

@@ -35,7 +35,7 @@ const about = {
   show: true,
   heading: "About Me",
   imageLink: profileImage, // Use imported profile picture
-  imageSize: 300,
+  imageSize: 375,
   message: `
     My name is Akash Mishra, a final-year Computer Science and Engineering student at IIIT Ranchi. 
     I'm passionate about web development and building efficient, scalable solutions using technologies like the MERN stack. 
@@ -90,11 +90,18 @@ const skills = {
     {
       title: "Full Stack Development",
       skills: [
-        emoji(
-          "⚡ Building responsive Single-Page-Apps (SPA) & PWA in React.js"
-        ),
-        emoji("⚡ Building responsive static websites using Next.js"),
-        emoji("⚡ Building RESTful APIs in Django & Django REST Framework"),
+        {
+          text: "Building responsive Single-Page Applications (SPA) & Progressive Web Apps (PWA) in React.js",
+          emoji: "⚡",
+        },
+        {
+          text: "Building responsive static websites using Next.js",
+          emoji: "⚡",
+        },
+        {
+          text: "Building RESTful APIs in Django & Django REST Framework",
+          emoji: "⚡",
+        },
       ],
       softwareSkills: [
         { skillName: "Node", iconifyTag: "vscode-icons:file-type-node" },
@@ -102,7 +109,7 @@ const skills = {
         { skillName: "JavaScript", iconifyTag: "logos:javascript" },
         { skillName: "Cpp", iconifyTag: "vscode-icons:file-type-cpp" },
         { skillName: "C", iconifyTag: "vscode-icons:file-type-c" },
-        { skillName: "AWS", iconifyTag: "logos:aws" },
+        // { skillName: "AWS", iconifyTag: "logos:aws" },
         { skillName: "Heroku", iconifyTag: "logos:heroku-icon" },
         { skillName: "Vercel", iconifyTag: "logos:vercel-icon" },
         { skillName: "Vite", iconifyTag: "logos:vitejs" },
