@@ -38,7 +38,7 @@ const MainBody = React.forwardRef(
             ))}
           </div>
           <a
-            className="inline-block px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition duration-300 rounded"
+            className="inline-block px-6 py-2  bg-slate-300 border border-white text-white hover:bg-white hover:text-black transition duration-300 rounded"
             href="#aboutme"
             role="button"
             aria-label="Learn more about me"

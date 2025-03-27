@@ -60,18 +60,18 @@ const CardButtons = ({ svn_url }) => {
   return (
     <div className="flex gap-3 mb-4">
       <a
-        href={`${svn_url}/archive/master.zip`}
-        className="flex-1 bg-gradient-to-r from-indigo-500 to-blue-500 py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-indigo-600 hover:to-blue-600"
-      >
-        <i className="fab fa-github" /> Clone 
-      </a>
-      <a
         href={svn_url}
         target="_blank"
         rel="noopener noreferrer"
         className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-blue-700 hover:to-indigo-700"
       >
-        <i className="fab fa-github" /> Repo
+        <i className="fab fa-github" /> View Code
+      </a>
+      <a
+        href={`${svn_url}/archive/master.zip`}
+        className="flex-1 bg-gradient-to-r from-indigo-500 to-blue-500 py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-indigo-600 hover:to-blue-600"
+      >
+        <i className="fab fa-github" /> Clone
       </a>
     </div>
   );
@@ -174,7 +174,7 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
           </span>
         </span>
       </a>
-      <small className="text-gray-500">Updated {updated_at}</small>
+      <small className="text-gray-500 ">Updated {updated_at}</small>
     </p>
   );
 };
