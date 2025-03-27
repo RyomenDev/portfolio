@@ -49,6 +49,15 @@ const Skills = ({ skillsSection }) => {
     });
   };
 
+  // Function to reset visible icons to initial count (10)
+  const handleShowLess = (sectionIndex) => {
+    setVisibleCounts((prevVisibleCounts) => {
+      const newCounts = [...prevVisibleCounts];
+      newCounts[sectionIndex] = 10;
+      return newCounts;
+    });
+  };
+
   return (
     <div className="w-full flex justify-center items-center">
       {skillsSection && (
@@ -95,16 +104,27 @@ const Skills = ({ skillsSection }) => {
                         </Fragment>
                       ))}
                   </div>
-                  {iconOrder[sectionIndex] &&
-                    visibleCounts[sectionIndex] <
-                      iconOrder[sectionIndex].length && (
-                      <button
-                        onClick={() => handleShowMore(sectionIndex)}
-                        className="mt-0 mb-2 text-sm text-blue-600 hover:underline"
-                      >
-                        Show More
-                      </button>
-                    )}
+                  <div className="flex justify-center items-center gap-2">
+                    {iconOrder[sectionIndex] &&
+                      visibleCounts[sectionIndex] <
+                        iconOrder[sectionIndex].length && (
+                        <button
+                          onClick={() => handleShowMore(sectionIndex)}
+                          className="mt-0 mb-2 text-sm text-blue-600 hover:underline"
+                        >
+                          Show More
+                        </button>
+                      )}
+                    {iconOrder[sectionIndex] &&
+                      visibleCounts[sectionIndex] > 10 && (
+                        <button
+                          onClick={() => handleShowLess(sectionIndex)}
+                          className="mt-0 mb-2 text-sm text-blue-600 hover:underline"
+                        >
+                          Show Less
+                        </button>
+                      )}
+                  </div>
                   <div>
                     {section.skills.map((skill, i) => (
                       <p key={i} className="text-gray-700 flex text-left">
