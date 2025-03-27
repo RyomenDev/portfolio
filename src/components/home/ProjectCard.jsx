@@ -14,7 +14,7 @@ const ProjectCard = ({ value }) => {
   } = value;
 
   return (
-    <div className="shadow-lg p-6 mb-5 bg-white rounded-lg transition-transform transform hover:scale-105 h-full border border-gray-200">
+    <div className="shadow-lg py-6 px-3 md:p-6 mb-5 bg-white rounded-lg transition-transform transform hover:scale-105 h-full border border-gray-200">
       <div>
         {/* Styled Name Section */}
         <h5 className="relative text-2xl font-bold mb-2 text-black line-clamp-1 transition-colors duration-300 group">

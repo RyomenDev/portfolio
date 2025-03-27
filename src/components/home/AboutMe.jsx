@@ -38,7 +38,7 @@ const AboutMe = ({ heading, message, profileImage, imgSize, resume }) => {
         {showPic && (
           <div className="flex justify-center mb-10 lg:mb-0">
             <img
-              className="border-4 border-gray-300 rounded-full shadow-lg w-96 h-" //  sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-48 lg:h-48
+              className="border-4 border-gray-300 rounded-full shadow-lg md:w-96 md:h-96 w-44 h-44"
               src={profilePicUrl || "fallback-image-url.jpg"}
               alt="Profile"
             />

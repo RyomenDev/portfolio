@@ -53,7 +53,7 @@ const Project = ({ heading, username, length, specific = [] }) => {
     <Jumbotron
       fluid
       id="projects"
-      className="bg-gray-100 m-0 p-8 rounded-lg shadow-md"
+      className="bg-gray-100 m-0 md:p-8 rounded-lg shadow-md"
     >
       <h2 className="text-5xl font-bold pb-5 text-center text-black shadow-md m-2">
         {heading}

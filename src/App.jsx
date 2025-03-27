@@ -61,7 +61,7 @@ const App = () => {
   return (
     <>
       {/* <SEO seoData={seoData} /> */}
-      <div className="px-10 bg-gray-200">
+      <div className="md:px-10 bg-gray-200">
         <Navbar ref={titleRef} />
 
         <div className="content-wrapper">

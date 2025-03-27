@@ -16,7 +16,7 @@ const ExperienceCard = ({ data }) => {
       : data.description;
 
   return (
-    <div className="lg:w-1/2 p-4">
+    <div className="lg:w-1/2 py-4">
       <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
         <a
           href={data.completionLetter}
