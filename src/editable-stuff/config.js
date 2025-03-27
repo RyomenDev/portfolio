@@ -122,33 +122,35 @@ const skills = {
       softwareSkills: [
         { skillName: "Node", iconifyTag: "vscode-icons:file-type-node" },
         { skillName: "Reactjs", iconifyTag: "vscode-icons:file-type-reactjs" },
-        //   { skillName: "Express.js", iconifyTag: "logos:express" },
+        { skillName: "AWS", iconifyTag: "logos:aws" },
+        { skillName: "Swagger API", iconifyTag: "logos:swagger" },
+        { skillName: "Firebase", iconifyTag: "logos:firebase" },
+        { skillName: "Gemini", iconifyTag: "logos:gemini" },
+        { skillName: "Puppeteer", iconifyTag: "logos:puppeteer" },
+        { skillName: "OpenAI", iconifyTag: "logos:openai" },
+        { skillName: "Tailwind CSS", iconifyTag: "logos:tailwindcss-icon" },
+        { skillName: "Redux", iconifyTag: "logos:redux" },
+        // { skillName: "Express.js", iconifyTag: "logos:express" },
 
-        // Programming Languages
-        // { skillName: "C++", iconifyTag: "vscode-icons:file-type-cpp" },
+        //
+        { skillName: "Cpp", iconifyTag: "vscode-icons:file-type-cpp" },
         { skillName: "JavaScript", iconifyTag: "logos:javascript" },
         { skillName: "TypeScript", iconifyTag: "logos:typescript-icon" },
         { skillName: "Python", iconifyTag: "logos:python" },
         { skillName: "C", iconifyTag: "vscode-icons:file-type-c" },
-
-        // Developer Tools & Cloud
-        { skillName: "AWS", iconifyTag: "logos:aws" },
-        { skillName: "Cloudinary", iconifyTag: "logos:cloudinary" },
         { skillName: "Elastic Stack", iconifyTag: "logos:elasticsearch" },
         { skillName: "Docker", iconifyTag: "logos:docker-icon" },
-        { skillName: "VS Code", iconifyTag: "vscode-icons:file-type-vscode" },
         { skillName: "Git", iconifyTag: "logos:git-icon" },
         { skillName: "GitHub", iconifyTag: "akar-icons:github-fill" },
+        { skillName: "Strapi", iconifyTag: "logos:strapi" },
 
-        // Databases, CMS, & APIs
+        //
+        { skillName: "Cloudinary", iconifyTag: "logos:cloudinary" },
+        { skillName: "VS Code", iconifyTag: "vscode-icons:file-type-vscode" },
         { skillName: "MongoDB", iconifyTag: "logos:mongodb" },
         { skillName: "SQL", iconifyTag: "logos:mysql" },
         { skillName: "Redis", iconifyTag: "logos:redis" },
         { skillName: "Appwrite", iconifyTag: "logos:appwrite" },
-        { skillName: "Strapi", iconifyTag: "logos:strapi" },
-        { skillName: "Swagger API", iconifyTag: "logos:swagger" },
-
-        //
         { skillName: "Heroku", iconifyTag: "logos:heroku-icon" },
         { skillName: "Vercel", iconifyTag: "logos:vercel-icon" },
         { skillName: "Vite", iconifyTag: "logos:vitejs" },
@@ -156,17 +158,17 @@ const skills = {
           skillName: "Markdown",
           iconifyTag: "vscode-icons:file-type-markdown",
         },
+        //
         { skillName: "CSS", iconifyTag: "vscode-icons:file-type-css" },
         { skillName: "JSON", iconifyTag: "vscode-icons:file-type-json" },
         { skillName: "MongoDB", iconifyTag: "logos:mongodb" },
         { skillName: "Postman", iconifyTag: "logos:postman-icon" },
-        { skillName: "MySQL Workbench", iconifyTag: "logos:mysql" },
         { skillName: "MySQL", iconifyTag: "logos:mysql" },
         { skillName: "Stripe", iconifyTag: "logos:stripe" },
         { skillName: "Google Maps API", iconifyTag: "logos:google-maps" },
+        { skillName: "Google APIs", iconifyTag: "logos:google" },
         { skillName: "WebSockets", iconifyTag: "logos:websocket" },
-        { skillName: "Tailwind CSS", iconifyTag: "logos:tailwindcss-icon" },
-        { skillName: "Redux", iconifyTag: "logos:redux" },
+        // { skillName: "MySQL Workbench", iconifyTag: "logos:mysql" },
       ],
     },
   ],
