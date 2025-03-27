@@ -11,7 +11,7 @@ const Skills = ({ skillsSection }) => {
   // On component mount, initialize the icon order
   useEffect(() => {
     if (skillsSection?.data) {
-      const allSkills = skillsSection.data.map(
+      const allSkills = skillsSection?.data?.map(
         (section) => section.softwareSkills
       );
       setIconOrder(allSkills);
@@ -21,7 +21,7 @@ const Skills = ({ skillsSection }) => {
   // Function to rotate the icons in each section
   const rotateIcons = () => {
     setIconOrder((prevIconOrder) => {
-      return prevIconOrder.map((sectionSkills) => {
+      return prevIconOrder?.map((sectionSkills) => {
         const rotatedSkills = [...sectionSkills.slice(1), sectionSkills[0]]; // Rotate the first icon to the last position
         return rotatedSkills;
       });
@@ -35,68 +35,73 @@ const Skills = ({ skillsSection }) => {
   }, []);
 
   return (
-    skillsSection && (
-      <Container className="text-center my-5 section section-lg">
-        {skillsSection.data.map((section, sectionIndex) => {
-          return (
-            <motion.div
-              className="my-10 flex border border-gray-50 rounded-lg shadow-lg p-4 bg-gray-50"
-              key={sectionIndex}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2  w-full">
-                <div className="flex justify-center items-center">
-                  <DisplayLottie animationData={codingAnimation} />
-                </div>
-                <div className="flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold mb-2">
-                    {section.title}
-                  </h3>
-                  <div className="flex justify-center flex-wrap mb-4">
-                    {iconOrder[sectionIndex]?.map((skill, i) => {
-                      return (
-                        <Fragment key={i}>
-                          <motion.div
-                            className="bg-white border-2 border-blue-600 hover:bg-blue-600 hover:border-white rounded-full shadow-sm m-2 flex items-center justify-center w-16 h-16 transition-all duration-300"
-                            id={skill.skillName.replace(/\s/g, "")}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: i * 0.1 }}
-                          >
-                            <Icon icon={skill.iconifyTag} data-inline="false" />
-                          </motion.div>
-                          <UncontrolledTooltip
-                            delay={0}
-                            placement="bottom"
-                            target={skill.skillName.replace(/\s/g, "")}
-                            timeout={200}
-                          >
-                            {skill.skillName}
-                          </UncontrolledTooltip>
-                        </Fragment>
-                      );
-                    })}
+    <div className="w-full flex justify-center items-center">
+      {skillsSection && (
+        <Container className="text-center w-full my-5 section section-l">
+          {skillsSection?.data?.map((section, sectionIndex) => {
+            return (
+              <motion.div
+                className="my-10 flex border border-gray-50 rounded-lg shadow-lg p-4 bg-gray-50"
+                key={sectionIndex}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className="grid grid-cols-1 md:grid-cols-2  w-full">
+                  <div className="flex justify-center items-center">
+                    <DisplayLottie animationData={codingAnimation} />
                   </div>
-                  <div>
-                    {section.skills.map((skill, i) => (
-                      <p key={i} className="text-gray-700 flex text-left">
-                        <span className="mr-2">{skill.emoji}</span>
-                        {skill.text}
-                      </p>
-                    ))}
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-2xl font-semibold mb-2">
+                      {section?.title}
+                    </h3>
+                    <div className="flex justify-center flex-wrap mb-4">
+                      {iconOrder[sectionIndex]?.map((skill, i) => {
+                        return (
+                          <Fragment key={i}>
+                            <motion.div
+                              className="bg-white border-2 border-blue-600 hover:bg-blue-600 hover:border-white rounded-full shadow-sm m-2 flex items-center justify-center w-16 h-16 transition-all duration-300"
+                              id={skill?.skillName.replace(/\s/g, "")}
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ duration: 0.5, delay: i * 0.1 }}
+                            >
+                              <Icon
+                                icon={skill?.iconifyTag}
+                                data-inline="false"
+                              />
+                            </motion.div>
+                            <UncontrolledTooltip
+                              delay={0}
+                              placement="bottom"
+                              target={skill?.skillName.replace(/\s/g, "")}
+                              //   timeout={200}
+                              transition={{ timeout: 200 }}
+                              transitionTimeout={200}
+                            >
+                              {skill?.skillName}
+                            </UncontrolledTooltip>
+                          </Fragment>
+                        );
+                      })}
+                    </div>
+                    <div>
+                      {section.skills.map((skill, i) => (
+                        <p key={i} className="text-gray-700 flex text-left">
+                          <span className="mr-2">{skill?.emoji}</span>
+                          {skill?.text}
+                        </p>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          );
-        })}
-      </Container>
-    )
+              </motion.div>
+            );
+          })}
+        </Container>
+      )}
+    </div>
   );
 };
 
 export default Skills;
-
-

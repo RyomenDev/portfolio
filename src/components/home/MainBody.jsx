@@ -21,7 +21,7 @@ const MainBody = React.forwardRef(
             }}
           />
           <div className="flex justify-center space-x-4">
-            {icons.map((icon, index) => (
+            {icons?.map((icon, index) => (
               <a
                 key={`social-icon-${index}`}
                 target="_blank"

@@ -13,7 +13,7 @@ const Leadership = ({ heading, message, img, imageSize }) => {
         </div>
         <div className="md:w-2/3">
           <Carousel showThumbs={false} showStatus={false}>
-            {img.map((value, index) => (
+            {img?.map((value, index) => (
               <div key={index}>
                 <img
                   className="w-full"

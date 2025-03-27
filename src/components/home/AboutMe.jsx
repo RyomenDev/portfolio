@@ -24,7 +24,7 @@ const AboutMe = ({ heading, message, profileImage, imgSize, resume }) => {
     <section id="aboutme" className="py-16 bg-gray-100">
       <div className="container mx-auto flex flex-col lg:flex-row items-center gap-4">
         {/* Profile Image Section */}
-        {showPic && (
+        {/* {showPic && (
           <div className="lg:w-2/7 flex justify-center mb-10 lg:mb-0">
             <img
               className="border-4 border-gray-300 rounded-full shadow-lg"
@@ -32,6 +32,15 @@ const AboutMe = ({ heading, message, profileImage, imgSize, resume }) => {
               alt="Profile"
               width={imgSize}
               height={imgSize}
+            />
+          </div>
+        )} */}
+        {showPic && (
+          <div className="flex justify-center mb-10 lg:mb-0">
+            <img
+              className="border-4 border-gray-300 rounded-full shadow-lg w-96 h-" //  sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-48 lg:h-48
+              src={profilePicUrl || "fallback-image-url.jpg"}
+              alt="Profile"
             />
           </div>
         )}

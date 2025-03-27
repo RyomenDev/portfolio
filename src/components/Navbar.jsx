@@ -20,7 +20,7 @@ const Navigation = React.forwardRef((props, ref) => {
   return (
     <nav
       ref={navbarMenuRef}
-      className={`fixed top-0 left-0 w-full flex items-center justify-between p-4 transition-all duration-300 ease-in-out ${
+      className={`absolute top-0 left-0 w-full flex items-center justify-between p-4 transition-all duration-300 ease-in-out ${
         !isTop ? "bg-white shadow-md z-50" : "bg-transparent"
       }`}
     >

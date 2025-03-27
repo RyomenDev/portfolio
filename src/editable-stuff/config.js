@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import profileImage from "../assets/img/AkashMishra.jpg";
 import vivafit from "../assets/img/vivafit.png";
 import Weboin from "../assets/img/Weboin.png";
+import CodeNetra from "../assets/img/codeNetra.png";
 
 import linkedinIcon from "../assets/svg/linkedin-brands-solid.svg";
 import githubIcon from "../assets/svg/github-brands-solid.svg";
@@ -42,7 +43,7 @@ const about = {
     I thrive on working on personal projects that challenge my abilities and enable me to create impactful, user-focused applications.
   `,
   resume:
-    "https://drive.google.com/file/d/1AHETMA0ahfXOgUPo9eg3tmijqe6GIu7f/view?usp=drivesdk", // Link to resume
+    "https://drive.google.com/file/d/196IVtHi1vBhe9KjHaRzlrle7AMKoa_cn/view?usp=drivesdk", // Link to resume
 };
 
 // Projects Section Configuration
@@ -51,7 +52,14 @@ const repos = {
   heading: "Projects",
   gitHubUsername: "RyomenDev",
   reposLength: 0, // Set to 0 to stop fetching recent projects
-  specificRepos: ["CodeQuest", "FashionFleet", "UrbanGems", "aether-ai"], // List your specific repositories here
+  specificRepos: [
+    "CodeQuest",
+    "GlamourGrove",
+    "Round-Robin-Coupon-Distribution",
+    "aether-ai",
+    "UrbanGems",
+    "ScrapeSmart",
+  ], // List your specific repositories here
 };
 
 // Leadership Section Configuration
@@ -81,7 +89,7 @@ const leadership = {
   },
 };
 
-// Skills Section Configuration
+// Skills Section
 const skills = {
   title: "What I do",
   subTitle:
@@ -91,25 +99,56 @@ const skills = {
       title: "Full Stack Development",
       skills: [
         {
-          text: "Building responsive Single-Page Applications (SPA) & Progressive Web Apps (PWA) in React.js",
+          text: "Building responsive and dynamic web applications using React.js & Redux",
           emoji: "⚡",
         },
         {
-          text: "Building responsive static websites using Next.js",
+          text: "Developing RESTful APIs and backend services using Node.js, Express.js, and MongoDB",
           emoji: "⚡",
         },
         {
-          text: "Building RESTful APIs in Django & Django REST Framework",
+          text: "Integrating third-party APIs like Stripe for payments and Google Maps for location-based services",
+          emoji: "⚡",
+        },
+        {
+          text: "Enhancing performance with optimized database architecture and scalable backend solutions",
+          emoji: "⚡",
+        },
+        {
+          text: "Implementing secure authentication and authorization using JWT",
           emoji: "⚡",
         },
       ],
       softwareSkills: [
         { skillName: "Node", iconifyTag: "vscode-icons:file-type-node" },
         { skillName: "Reactjs", iconifyTag: "vscode-icons:file-type-reactjs" },
+        //   { skillName: "Express.js", iconifyTag: "logos:express" },
+
+        // Programming Languages
+        // { skillName: "C++", iconifyTag: "vscode-icons:file-type-cpp" },
         { skillName: "JavaScript", iconifyTag: "logos:javascript" },
-        { skillName: "Cpp", iconifyTag: "vscode-icons:file-type-cpp" },
+        { skillName: "TypeScript", iconifyTag: "logos:typescript-icon" },
+        { skillName: "Python", iconifyTag: "logos:python" },
         { skillName: "C", iconifyTag: "vscode-icons:file-type-c" },
-        // { skillName: "AWS", iconifyTag: "logos:aws" },
+
+        // Developer Tools & Cloud
+        { skillName: "AWS", iconifyTag: "logos:aws" },
+        { skillName: "Cloudinary", iconifyTag: "logos:cloudinary" },
+        { skillName: "Elastic Stack", iconifyTag: "logos:elasticsearch" },
+        { skillName: "Docker", iconifyTag: "logos:docker-icon" },
+        { skillName: "VS Code", iconifyTag: "vscode-icons:file-type-vscode" },
+        { skillName: "Git", iconifyTag: "logos:git-icon" },
+        { skillName: "GitHub", iconifyTag: "akar-icons:github-fill" },
+
+        // Databases, CMS, & APIs
+        { skillName: "MongoDB", iconifyTag: "logos:mongodb" },
+        { skillName: "SQL", iconifyTag: "logos:mysql" },
+        { skillName: "Redis", iconifyTag: "logos:redis" },
+        { skillName: "Appwrite", iconifyTag: "logos:appwrite" },
+        { skillName: "Strapi", iconifyTag: "logos:strapi" },
+        { skillName: "Swagger API", iconifyTag: "logos:swagger" },
+
+        //
         { skillName: "Heroku", iconifyTag: "logos:heroku-icon" },
         { skillName: "Vercel", iconifyTag: "logos:vercel-icon" },
         { skillName: "Vite", iconifyTag: "logos:vitejs" },
@@ -119,11 +158,15 @@ const skills = {
         },
         { skillName: "CSS", iconifyTag: "vscode-icons:file-type-css" },
         { skillName: "JSON", iconifyTag: "vscode-icons:file-type-json" },
-        { skillName: "Github", iconifyTag: "akar-icons:github-fill" },
-        { skillName: "Python", iconifyTag: "logos:python" },
         { skillName: "MongoDB", iconifyTag: "logos:mongodb" },
         { skillName: "Postman", iconifyTag: "logos:postman-icon" },
         { skillName: "MySQL Workbench", iconifyTag: "logos:mysql" },
+        { skillName: "MySQL", iconifyTag: "logos:mysql" },
+        { skillName: "Stripe", iconifyTag: "logos:stripe" },
+        { skillName: "Google Maps API", iconifyTag: "logos:google-maps" },
+        { skillName: "WebSockets", iconifyTag: "logos:websocket" },
+        { skillName: "Tailwind CSS", iconifyTag: "logos:tailwindcss-icon" },
+        { skillName: "Redux", iconifyTag: "logos:redux" },
       ],
     },
   ],
@@ -146,13 +189,21 @@ const experiences = {
   heading: "Experiences",
   data: [
     {
+      role: "Frontend Developer", // Role title
+      companyLogo: CodeNetra,
+      completionLetter: "#",
+      date: "Dec-25 – Present", // Duration
+      description:
+        "I worked on developing user interfaces and implementing core functionalities for company projects using React.js, ensuring a seamless and responsive user experience. I contributed to frontend optimization, state management, and component-based architecture to enhance performance. Additionally, I worked on backend development using Django, implementing key features and APIs for efficient data handling. I also integrated AWS services like EC2 for hosting and S3 for scalable storage solutions. My role involved collaborating with teams to refine UI/UX, troubleshoot issues, and ensure the development of robust, efficient, and scalable applications. ",
+    },
+    {
       role: "Web Development Intern", // Role title
       companyLogo: vivafit,
       completionLetter:
         "https://drive.google.com/file/d/1vsXcwlx-J5thWsvQycWRDgeNuaeEvzR4/view",
       date: "June 2024 – July 2024", // Duration
       description:
-        "Developed an exercise tracker web app and a meal planning platform with integrated nutrition APIs.",
+        "During my internship, I developed an Exercise Tracker and Healthy Eats platform using the MERN stack to enhance user health management. The Exercise Tracker enables users to log workouts, track durations, filter exercises by category, and search for specific routines. It features secure authentication, real-time data updates, and a personalized profile system. Healthy Eats focuses on personalized meal planning by integrating nutrition APIs to provide dietary recommendations. I implemented an admin panel for recipe management and designed an intuitive UI for better user experience. Both applications ensure seamless interaction, security, and efficiency in fitness and nutrition tracking. ",
     },
     {
       role: "Full Stack Developer", // Role title
@@ -161,7 +212,7 @@ const experiences = {
         "https://drive.google.com/file/d/17cYPi3Bm7sLyyfzAbMrbBjFUdl9n3dL1/view",
       date: "June 2023 – July 2023", // Duration
       description:
-        "Created a dynamic e-commerce website, implementing Google Maps API for delivery optimization.",
+        "I developed a dynamic E-commerce platform using React and MongoDB, focusing on API-driven product management and an intuitive UI with real-time updates. I built the frontend with React Hooks for a responsive user experience and implemented a secure backend to manage user data, product catalogs, and orders efficiently. Additionally, I integrated JWT authentication for security and utilized the Google Maps API to optimize delivery logistics, enabling precise location identification. By optimizing database architecture and ensuring fast API response times, I contributed to creating a scalable and high-performance platform capable of handling heavy traffic smoothly.",
     },
   ],
 };
