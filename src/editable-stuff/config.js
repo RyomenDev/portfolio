@@ -299,10 +299,11 @@ const educationInfo = {
       logo: College,
       subHeader: "B.tech in Computer Science & Engineering",
       duration: "📅 2021 – 2025",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      desc: "Conducted research on UAV resource allocation as part of major and minor projects at IIIT Ranchi. Served as a Public Relations (PR) member, actively contributing to community engagement and event coordination.",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "Developed and optimized UAV resource allocation models for efficient delivery and logistics.",
+        "Explored swarm algorithms and energy-efficient strategies for UAV operations.",
+        "Managed PR activities, fostering collaboration and outreach within the institute.",
       ],
     },
     {
@@ -310,8 +311,12 @@ const educationInfo = {
       logo: School,
       subHeader: "Senior Secondary (Class 12)",
       duration: "📅 2018 – 2020",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"],
+      desc: "Completed schooling with a strong academic and extracurricular record. Served as the Discipline Head, ensuring a structured and organized environment. Actively participated in various sports competitions and Olympiads, securing multiple accolades.",
+      descBullets: [
+        "Led as the Discipline Head, maintaining decorum and leadership at the school level.",
+        "Competed in national and international Olympiads, achieving notable rankings.",
+        "Participated and won multiple sports competitions ",
+      ],
     },
   ],
 };

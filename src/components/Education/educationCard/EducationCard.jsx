@@ -7,15 +7,18 @@ export default function EducationCard({ school }) {
   const { isDark } = useContext(StyleContext);
 
   const GetDescBullets = ({ descBullets }) => {
-    return descBullets ? (
-      <ul className="mt-2">
-        {descBullets.map((item, i) => (
-          <li key={i} className="text-gray-600 dark:text-gray-300 text-sm">
-            {item}
+    return descBullets
+      ? descBullets?.map((item, i) => (
+          <li
+            key={i}
+            className={`flex items-center gap-2 ${
+              isDark ? "text-gray-300" : "text-gray-800"
+            }`}
+          >
+            <span className="text-blue-500">➤</span> {item}
           </li>
-        ))}
-      </ul>
-    ) : null;
+        ))
+      : null;
   };
 
   if (!school.logo)
