@@ -1,7 +1,7 @@
 import "./card.scss";
 import "./globals.scss";
 import { projectsData } from "../../../editable-stuff/config.js";
-import ProjectCard from "./projectCard";
+import ProjectCard from "./projectCard.jsx";
 
 const Projects = () => {
   return (
