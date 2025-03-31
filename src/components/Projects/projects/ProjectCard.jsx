@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Skeleton from "react-loading-skeleton";
-import { fetchLanguages } from "../../API/githubApi"; // Import the fetchLanguages function
+import { fetchLanguages } from "../../../API/githubApi"; // Import the fetchLanguages function
 
 const ProjectCard = ({ value }) => {
   const {

@@ -15,7 +15,7 @@ import {
 // Direct imports for components (no lazy loading)
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
-import Project from "./components/home/Project";
+// import Project from "./components/home/Project";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import GetInTouch from "./components/home/GetInTouch";
@@ -27,10 +27,8 @@ import { StyleProvider } from "./contexts/StyleContext.js";
 
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Project from "./components/Projects";
 
-// import ProjectsAccord from "./Advanced/containers/projectsAccord/Projects.jsx";
-
-// Home Component: Displays the main content of the homepage
 const Home = React.forwardRef(({ theme }, ref) => (
   <div className="pt-16">
     <MainBody
@@ -51,12 +49,7 @@ const Home = React.forwardRef(({ theme }, ref) => (
     ) : null}
     <Education theme={theme} />
     <Experience theme={theme} />
-    <Project
-      heading={repos.heading}
-      username={repos.gitHubUsername}
-      length={repos.reposLength}
-      specific={repos.specificRepos}
-    />
+    <Project theme={theme} />
     <SkillsSection skillsSection={skills} />
   </div>
 ));

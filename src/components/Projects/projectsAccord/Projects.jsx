@@ -6,14 +6,14 @@ import {
   projectsHeader,
   //   publicationsHeader,
   //   publications,
-} from "../../portfolio.js";
+} from "../../../editable-stuff/config.js";
 import { motion } from "framer-motion";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
 
 const Projects = ({ theme, onToggle }) => {
   return (
-    <div className="projects-main">
+    <div className="projects-main mt-28">
       {/* <Header theme={theme} /> */}
       <div className="basic-projects">
         <motion.div

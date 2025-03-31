@@ -228,7 +228,7 @@ const seoData = {
 const projectsHeader = {
   title: "Projects",
   description:
-    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+    "My projects leverage the latest web technologies to build scalable and efficient applications. I specialize in full-stack development, integrating real-time features, cloud services, and optimized database solutions to enhance user experience and performance. I also deploy web applications using cloud infrastructure for better scalability and reliability.",
   avatar_image_path: "projects_image.svg",
 };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Jumbotron } from "./migration";
 import ProjectCardGrid from "./ProjectCardGrid"; // Grid component for project cards
-import { fetchSpecificRepo } from "../../API/githubApi"; // Function to fetch repo details
+import { fetchSpecificRepo } from "../../../API/githubApi.jsx"; // Function to fetch repo details
 
 const dummyProject = {
   name: null,
