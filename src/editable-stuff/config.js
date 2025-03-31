@@ -32,18 +32,16 @@ const greeting = {
   displayGreeting: true, // Set false to hide this section, defaults to true
 };
 
-// Navigation Bar Configuration
 const navBar = {
   show: true, // Toggle visibility of the navigation bar
 };
 
-// Main Body Configuration
 const mainBody = {
   gradientColors: "#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1",
   firstName: "Akash",
   middleName: "",
   lastName: "Mishra",
-  message: "Passionate about changing the world with technology.",
+  message: "Driven to innovate and create impactful technological solutions.",
   icons: [
     { image: githubIcon, url: "https://github.com/RyomenDev" },
     {
@@ -53,7 +51,6 @@ const mainBody = {
   ],
 };
 
-// About Section Configuration
 const about = {
   show: true,
   heading: "About Me",
@@ -84,7 +81,6 @@ const repos = {
   ], // List your specific repositories here
 };
 
-// Leadership Section Configuration
 const leadership = {
   show: false, // Currently hidden
   heading: "Leadership",
@@ -111,7 +107,6 @@ const leadership = {
   },
 };
 
-// Skills Section
 const skills = {
   title: "What I do",
   subTitle:
@@ -196,7 +191,6 @@ const skills = {
   ],
 };
 
-// Get In Touch Section Configuration
 const getInTouch = {
   show: true,
   heading: "Get In Touch",
@@ -246,48 +240,57 @@ const competitiveSites = {
       style: {
         color: "#F79F1B",
       },
-      profileLink: "#",
+      profileLink: "https://leetcode.com/u/RyoZephyr/",
     },
     {
-      siteName: "HackerRank",
-      iconifyClassname: "simple-icons:hackerrank",
+      siteName: "GeeksforGeeks",
+      iconifyClassname: "simple-icons:geeksforgeeks",
       style: {
-        color: "#2EC866",
+        color: "#2F8D46",
       },
-      profileLink: "#",
+      profileLink: "https://github.com/RyomenDev",
     },
-    {
-      siteName: "Codechef",
-      iconifyClassname: "simple-icons:codechef",
-      style: {
-        color: "#5B4638",
-      },
-      profileLink: "#",
-    },
-    {
-      siteName: "Codeforces",
-      iconifyClassname: "simple-icons:codeforces",
-      style: {
-        color: "#1F8ACB",
-      },
-      profileLink: "#",
-    },
-    {
-      siteName: "Hackerearth",
-      iconifyClassname: "simple-icons:hackerearth",
-      style: {
-        color: "#323754",
-      },
-      profileLink: "#",
-    },
-    {
-      siteName: "Kaggle",
-      iconifyClassname: "simple-icons:kaggle",
-      style: {
-        color: "#20BEFF",
-      },
-      profileLink: "#",
-    },
+
+    // {
+    //   siteName: "HackerRank",
+    //   iconifyClassname: "simple-icons:hackerrank",
+    //   style: {
+    //     color: "#2EC866",
+    //   },
+    //   profileLink: "#",
+    // },
+    // {
+    //   siteName: "Codechef",
+    //   iconifyClassname: "simple-icons:codechef",
+    //   style: {
+    //     color: "#5B4638",
+    //   },
+    //   profileLink: "#",
+    // },
+    // {
+    //   siteName: "Codeforces",
+    //   iconifyClassname: "simple-icons:codeforces",
+    //   style: {
+    //     color: "#1F8ACB",
+    //   },
+    //   profileLink: "#",
+    // },
+    // {
+    //   siteName: "Hackerearth",
+    //   iconifyClassname: "simple-icons:hackerearth",
+    //   style: {
+    //     color: "#323754",
+    //   },
+    //   profileLink: "#",
+    // },
+    // {
+    //   siteName: "Kaggle",
+    //   iconifyClassname: "simple-icons:kaggle",
+    //   style: {
+    //     color: "#20BEFF",
+    //   },
+    //   profileLink: "#",
+    // },
   ],
 };
 
