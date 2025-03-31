@@ -15,6 +15,10 @@ import College from "../assets/img/College.png";
 import linkedinIcon from "../assets/svg/linkedin-brands-solid.svg";
 import githubIcon from "../assets/svg/github-brands-solid.svg";
 
+import ScrapeSmartImg from "../assets/projects/scrapeSmart.png";
+import GlamourGrove from "../assets/projects/GlamourGroveImg.png";
+import CodeQuest from "../assets/projects/CodeQuestImg.png";
+
 const splashScreen = {
   enabled: true, // set false to disable splash screen
   animation: splashAnimation,
@@ -232,6 +236,70 @@ const projectsHeader = {
   avatar_image_path: "projects_image.svg",
 };
 
+const projectsData = [
+  {
+    id: 1,
+    name: "ScrapeSmart: AI-Powered Scraper",
+    description:
+      "ScrapeSmart is a MERN-based Amazon Smart TV scraper that extracts product details, pricing, offers, and AI-generated review summaries. Built with Node.js, Puppeteer, Express, React.js, and MongoDB, it provides an interactive UI for seamless product data retrieval and storage.",
+    tools: [
+      "React.js",
+      "Express",
+      "MongoDB",
+      "tailwindcss",
+      "OpenAI API",
+      "Gemini API",
+      "Puppeteer",
+      "render",
+      "vercel",
+    ],
+    role: "",
+    image: ScrapeSmartImg,
+    code: "https://github.com/RyomenDev/ScrapeSmart",
+    demo: "https://scrapesmart.vercel.app/",
+  },
+  {
+    id: 2,
+    name: "GlamourGrove: Clothing Website",
+    description:
+      "GlamourGrove is a full-stack fashion e-commerce platform that offers a seamless shopping experience with modern UI, secure transactions, and advanced search capabilities. Built with the MERN stack, it provides users with a stylish and intuitive interface to explore and purchase the latest fashion trends.",
+    tools: [
+      "RetellAi",
+      "React.js",
+      "Express",
+      "MongoDB",
+      "tailwindcss",
+      "FireBase",
+      "Stripe",
+      "Redux",
+      "Cloudinary",
+    ],
+    role: "",
+    image: GlamourGrove,
+    code: "https://github.com/RyomenDev/GlamourGrove",
+    demo: "https://glamourgrove-umber.vercel.app/",
+  },
+  {
+    id: 3,
+    name: "CodeQuest: Document Search Engine",
+    description:
+      "CodeQuest is a document search engine leveraging NLP techniques for efficient information retrieval. It implements BM25 and TF-IDF vectorization for accurate query matching and ranking, with tokenization, stopword removal, and lemmatization. Built using Node.js, Express.js, and EJS, it offers a dynamic UI for seamless document exploration and retrieval.",
+    tools: [
+      "Node.js",
+      "Express.js",
+      "EJS",
+      "HTML5",
+      "CSS3",
+      "NLP Libraries",
+      "BM25",
+    ],
+    image: CodeQuest,
+    code: "https://github.com/RyomenDev/CodeQuest",
+    role: "",
+    demo: "https://codequest-jalp.onrender.com/",
+  },
+];
+
 const competitiveSites = {
   competitiveSites: [
     {
@@ -391,11 +459,15 @@ export {
   leadership,
   getInTouch,
   seoData,
-  projectsHeader,
-  competitiveSites,
+  //
   splashScreen,
   greeting,
   educationInfo,
+  //
+  projectsHeader,
+  projectsData,
+  //
+  competitiveSites,
   experience,
   workExperiences,
 };

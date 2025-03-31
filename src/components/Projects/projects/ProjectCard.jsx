@@ -1,359 +1,222 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Skeleton from "react-loading-skeleton";
-import { fetchLanguages } from "../../../API/githubApi"; // Import the fetchLanguages function
+import { FaCode, FaPlay } from "react-icons/fa";
+import placeholder from "./placeholder.png";
 
-const ProjectCard = ({ value }) => {
-  const {
-    name,
-    description,
-    svn_url,
-    stargazers_count,
-    languages_url,
-    pushed_at,
-    homepage,
-  } = value;
+const SingleProject = ({ project }) => {
+  const { name, description, tools, code, demo, image } = project;
 
   return (
-    <div className="shadow-lg py-6 px-5 md:p-6 mb-6 bg-white rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl h-full border border-gray-300">
-      <div>
-        {/* Project Title Section */}
-        <h5 className="relative text-2xl font-bold mb-3 text-gray-900 line-clamp-1 transition-colors duration-300 group">
-          <span className="absolute inset-0 bg-indigo-50 rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-          <a
-            href={homepage}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10 group-hover:text-indigo-700 transition-colors duration-300"
-          >
-            {name || <Skeleton />}
-          </a>
-        </h5>
-
-        {/* Project Description */}
-        <p className="line-clamp-3 mb-4 text-gray-700 text-base">
-          {description ? description : <Skeleton count={3} />}
-        </p>
-
-        {/* Action Buttons */}
-        {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
-        <hr className="my-4 border-gray-300" />
-
-        {/* Languages Section */}
-        {languages_url ? (
-          <Language languages_url={languages_url} repo_url={svn_url} />
-        ) : (
-          <Skeleton count={3} />
-        )}
-
-        {/* Card Footer */}
-        <CardFooter
-          star_count={stargazers_count}
-          repo_url={svn_url}
-          pushed_at={pushed_at}
-        />
-      </div>
-    </div>
-  );
-};
-
-const CardButtons = ({ svn_url }) => {
-  return (
-    <div className="flex gap-3 mb-4">
-      <a
-        href={svn_url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-blue-700 hover:to-indigo-700"
-      >
-        <i className="fab fa-github" /> View Code
-      </a>
-      <a
-        href={`${svn_url}/archive/master.zip`}
-        className="flex-1 bg-gradient-to-r from-indigo-500 to-blue-500 py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-indigo-600 hover:to-blue-600"
-      >
-        <i className="fab fa-github" /> Clone
-      </a>
-    </div>
-  );
-};
-
-const Language = ({ languages_url, repo_url }) => {
-  const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const handleRequest = useCallback(async () => {
-    try {
-      setLoading(true);
-      const response = await fetchLanguages(languages_url);
-      setData(response);
-    } catch (error) {
-      setError("Failed to fetch languages.");
-    } finally {
-      setLoading(false);
-    }
-  }, [languages_url]);
-
-  useEffect(() => {
-    handleRequest();
-  }, [handleRequest]);
-
-  const total_count = Object.values(data).reduce(
-    (acc, count) => acc + count,
-    0
-  );
-  const languagesArray = Object.keys(data);
-
-  return (
-    <div className="pb-3 text-gray-800">
-      {loading ? (
-        <Skeleton count={3} />
-      ) : error ? (
-        <p className="text-red-600">{error}</p>
-      ) : languagesArray.length ? (
-        <div>
-          Languages:{" "}
-          {languagesArray.map((language) => (
+    <>
+      <div className="group w-full h-fit flex flex-col items-center justify-center relative cursor-text overflow-hidden px-3 md:px-8 py-[1.4rem] bg-[linear-gradient(90deg,#B0F3E8_0%,#201435_100%)] shadow-2xl rounded-lg border border-[#1a1443]">
+        <div className="flex flex-col items-center justify-between w-full h-full">
+          <h2 className="text-[#EFF3F4] not-italic font-semibold text-[1.525rem] leading-[110%] text-center capitalize">
+            {name}
+          </h2>
+          <div className="p-6">
+            <img
+              src={image ? image : placeholder}
+              alt={name}
+              className="w-full h-full transition-opacity duration-[0.7s] delay-[0.3s] rounded-lg group-hover:opacity-30"
+            />
+          </div>
+          <div className="flex items-center justify-between w-full">
             <a
-              key={language}
-              className="text-indigo-600 hover:underline"
-              href={`${repo_url}/search?l=${language}`}
+              href={demo}
               target="_blank"
               rel="noopener noreferrer"
+              className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 decoration-clone cursor-pointer no-underline delay-[0.3s] z-50"
             >
-              <span className="inline-flex items-center bg-indigo-100 text-indigo-800 text-xs font-medium mr-1 px-2.5 py-0.5 rounded">
-                {language}:{" "}
-                {Math.trunc((data[language] / total_count) * 1000) / 10}%
-              </span>
+              <FaPlay />
             </a>
+
+            <a
+              href={code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center items-center w-10 h-10 rounded-full border-2 border-[#EFF3F4] text-[#EFF3F4] transition-all duration-300 hover:bg-[#231d4b] hover:text-violet-600 hover:border-[#0F0C41] hover:scale-110 cursor-pointer no-underline delay-[0.3s] group-hover:translate-x-[-140px] z-50"
+            >
+              <FaCode />
+            </a>
+          </div>
+        </div>
+        <p className="absolute w-[90%] md:w-[85%] md:min-h-[150px] translate-x-[-110%] transition-transform duration-[0.9s] p-6 leading-[110%] rounded-[0_20px_20px_0] left-0 top-0 bg-[#129281]  text-[#EFF3F4] translate-y-[25%] md:translate-y-[50%] group-hover:translate-x-[-2%] text-xs md:text-xl">
+          {description}
+        </p>
+        <div className="group-hover:translate-x-0 absolute w-[140px] text-[0.8rem] flex justify-center gap-2 flex-col translate-x-full transition-transform duration-[0.5s] delay-[0.3s] p-[0.825rem] rounded-[10px_0_0_10px] right-0 bottom-2 md:bottom-12 bg-[#1B90A2] text-[#EFF3F4]">
+          {tools?.map((tag, id) => (
+            <span
+              className="font-medium break-words text-xs sm:text:sm md:text-xl"
+              key={id}
+            >
+              {tag}
+            </span>
           ))}
         </div>
-      ) : (
-        "Code yet to be deployed."
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 
-const CardFooter = ({ star_count, repo_url, pushed_at }) => {
-  const [updated_at, setUpdated_at] = useState("0 mins");
+export default SingleProject;
 
-  const handleUpdatetime = useCallback(() => {
-    const date = new Date(pushed_at);
-    const nowdate = new Date();
-    const diff = nowdate.getTime() - date.getTime();
-    const hours = Math.trunc(diff / 1000 / 60 / 60);
-
-    if (hours < 24) {
-      if (hours < 1) return setUpdated_at("just now");
-      const measurement = hours === 1 ? "hour" : "hours";
-      return setUpdated_at(`${hours} ${measurement} ago`);
-    } else {
-      const options = { day: "numeric", month: "long", year: "numeric" };
-      const time = new Intl.DateTimeFormat("en-US", options).format(date);
-      return setUpdated_at(`on ${time}`);
-    }
-  }, [pushed_at]);
-
-  useEffect(() => {
-    handleUpdatetime();
-  }, [handleUpdatetime]);
-
-  return (
-    <p className="text-gray-600 mt-4">
-      <a
-        href={`${repo_url}/stargazers`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-gray-800 hover:underline"
-      >
-        <span className="mr-4 inline-flex items-center">
-          <i className="fab fa-github" /> Stars{" "}
-          <span className="bg-indigo-600 text-white rounded-full px-2 ml-1">
-            {star_count}
-          </span>
-        </span>
-      </a>
-      <small className="text-gray-500 ">Updated {updated_at}</small>
-    </p>
-  );
-};
-
-export default ProjectCard;
-
-// import React, { useState, useEffect, useCallback } from "react";
-// import Skeleton from "react-loading-skeleton";
-// import { fetchLanguages } from "../../API/githubApi"; // Import the fetchLanguages function
-
-// const ProjectCard = ({ value }) => {
-//   const {
-//     name,
-//     description,
-//     svn_url,
-//     stargazers_count,
-//     languages_url,
-//     pushed_at,
-//     homepage,
-//   } = value;
-
-//   return (
-//     <div className="shadow-lg py-6 px-3 md:p-6 mb-5 bg-white rounded-lg transition-transform transform hover:scale-105 h-full border border-gray-200">
-//       <div>
-//         {/* Styled Name Section */}
-//         <h5 className="relative text-2xl font-bold mb-2 text-black line-clamp-1 transition-colors duration-300 group">
-//           <span className="absolute inset-0 bg-blue-50 rounded-lg transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
-//           <a
-//             href={homepage}
-//             target="_blank"
-//             rel="noopener noreferrer"
-//             className="relative z-10 group-hover:text-blue-800 transition-colors duration-300"
-//           >
-//             {name || <Skeleton />}
-//           </a>
-//         </h5>
-
-//         <p className="line-clamp-3 mb-4 text-gray-700 text-base">
-//           {description ? description : <Skeleton count={3} />}
-//         </p>
-
-//         {svn_url ? <CardButtons svn_url={svn_url} /> : <Skeleton count={2} />}
-//         <hr className="my-4 border-gray-300" />
-//         {languages_url ? (
-//           <Language languages_url={languages_url} repo_url={svn_url} />
-//         ) : (
-//           <Skeleton count={3} />
-//         )}
-//         <CardFooter
-//           star_count={stargazers_count}
-//           repo_url={svn_url}
-//           pushed_at={pushed_at}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
-// const CardButtons = ({ svn_url }) => {
-//   return (
-//     <div className="flex gap-2 mb-4">
-//       <a
-//         href={`${svn_url}/archive/master.zip`}
-//         className="flex-1 bg-gradient-to-r bg-blue-400 py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:bg-blue-700 hover:shadow-lg"
-//       >
-//         <i className="fab fa-github" /> Clone Project
-//       </a>
-//       <a
-//         href={svn_url}
-//         target="_blank"
-//         rel="noopener noreferrer"
-//         className="flex-1 bg-gradient-to-r from-indigo-400 to-purple-400 text-white py-2 px-4 rounded-lg shadow transition-transform transform hover:scale-105 hover:from-indigo-700 hover:to-purple-700 hover:shadow-lg"
-//       >
-//         <i className="fab fa-github" /> Repo
-//       </a>
-//     </div>
-//   );
-// };
-
-// const Language = ({ languages_url, repo_url }) => {
-//   const [data, setData] = useState({});
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   const handleRequest = useCallback(async () => {
-//     try {
-//       setLoading(true);
-//       const response = await fetchLanguages(languages_url);
-//       setData(response);
-//     } catch (error) {
-//       setError("Failed to fetch languages.");
-//     } finally {
-//       setLoading(false);
-//     }
-//   }, [languages_url]);
-
-//   useEffect(() => {
-//     handleRequest();
-//   }, [handleRequest]);
-
-//   const total_count = Object.values(data).reduce(
-//     (acc, count) => acc + count,
-//     0
-//   );
-//   const languagesArray = Object.keys(data);
-
-//   return (
-//     <div className="pb-3 text-gray-800">
-//       {loading ? (
-//         <Skeleton count={3} />
-//       ) : error ? (
-//         <p className="text-red-600">{error}</p>
-//       ) : languagesArray.length ? (
-//         <div>
-//           Languages:{" "}
-//           {languagesArray.map((language) => (
-//             <a
-//               key={language}
-//               className="text-blue-600 hover:underline"
-//               href={`${repo_url}/search?l=${language}`}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//             >
-//               <span className="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium mr-1 px-2.5 py-0.5 rounded">
-//                 {language}:{" "}
-//                 {Math.trunc((data[language] / total_count) * 1000) / 10}%
-//               </span>
-//             </a>
-//           ))}
-//         </div>
-//       ) : (
-//         "Code yet to be deployed."
-//       )}
-//     </div>
-//   );
-// };
-
-// const CardFooter = ({ star_count, repo_url, pushed_at }) => {
-//   const [updated_at, setUpdated_at] = useState("0 mins");
-
-//   const handleUpdatetime = useCallback(() => {
-//     const date = new Date(pushed_at);
-//     const nowdate = new Date();
-//     const diff = nowdate.getTime() - date.getTime();
-//     const hours = Math.trunc(diff / 1000 / 60 / 60);
-
-//     if (hours < 24) {
-//       if (hours < 1) return setUpdated_at("just now");
-//       const measurement = hours === 1 ? "hour" : "hours";
-//       return setUpdated_at(`${hours.toString()} ${measurement} ago`);
-//     } else {
-//       const options = { day: "numeric", month: "long", year: "numeric" };
-//       const time = new Intl.DateTimeFormat("en-US", options).format(date);
-//       return setUpdated_at(`on ${time}`);
-//     }
-//   }, [pushed_at]);
-
-//   useEffect(() => {
-//     handleUpdatetime();
-//   }, [handleUpdatetime]);
-
-//   return (
-//     <p className="text-gray-600 mt-4">
-//       <a
-//         href={`${repo_url}/stargazers`}
-//         target="_blank"
-//         rel="noopener noreferrer"
-//         className="text-gray-800 hover:underline"
-//       >
-//         <span className="mr-4">
-//           <i className="fab fa-github" /> Stars{" "}
-//           <span className="bg-blue-600 text-white rounded-full px-2">
-//             {star_count}
-//           </span>
-//         </span>
-//       </a>
-//       <small className="text-gray-500">Updated {updated_at}</small>
-//     </p>
-//   );
-// };
-
-// export default ProjectCard;
+{
+  /* <div className="absolute left-0 top-0 flex justify-center opacity-40">
+          <svg
+            width="1170"
+            height="403"
+            viewBox="0 0 1170 403"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1170 57.3509H0V56.5132H1170V57.3509Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M410.388 402.472L410.388 0.933594L411.226 0.933594L411.226 402.472L410.388 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M841.791 402.472L841.791 0.933594L842.628 0.933594L842.628 402.472L841.791 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1014.35 402.472L1014.35 0.933594L1015.19 0.933594L1015.19 402.472L1014.35 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M928.071 402.472L928.071 0.933594L928.909 0.933594L928.909 402.472L928.071 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1100.63 402.472L1100.63 0.933594L1101.47 0.933594L1101.47 402.472L1100.63 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1170 143.631H0V142.793H1170V143.631Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M324.108 402.472L324.108 0.933594L324.946 0.933594L324.946 402.472L324.108 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M755.51 402.472L755.51 0.933594L756.348 0.933594L756.348 402.472L755.51 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1170 229.911H0V229.074H1170V229.911Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M237.827 402.472L237.827 0.933594L238.665 0.933594L238.665 402.472L237.827 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M669.23 402.472L669.23 0.933594L670.067 0.933594L670.067 402.472L669.23 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1170 316.192H0V315.354H1170V316.192Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M151.547 402.472L151.547 0.933594L152.385 0.933594L152.385 402.472L151.547 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M582.949 402.472L582.949 0.933594L583.787 0.933594L583.787 402.472L582.949 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M1170 402.472H0V401.635H1170V402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M65.2666 402.472L65.2666 0.933594L66.1042 0.933594L66.1042 402.472L65.2666 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M496.669 402.472L496.669 0.933594L497.507 0.933594L497.507 402.472L496.669 402.472Z"
+              fill="white"
+              fillOpacity="0.3"
+            ></path>
+            <rect
+              x="152.382"
+              y="57.3506"
+              width="85.4536"
+              height="85.4429"
+              fill="white"
+              fillOpacity="0.15"
+            ></rect>
+            <rect
+              x="238.665"
+              y="143.631"
+              width="85.575"
+              height="84.9928"
+              fill="white"
+              fillOpacity="0.1"
+            ></rect>
+            <rect
+              x="842.615"
+              y="57.3506"
+              width="85.4597"
+              height="85.4453"
+              fill="white"
+              fillOpacity="0.15"
+            ></rect>
+          </svg>
+        </div> */
+}

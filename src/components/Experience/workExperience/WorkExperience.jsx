@@ -18,7 +18,7 @@ const WorkExperience = () => {
         <div className="experience-container" id="workExperience">
           <div>
             {/* <h1 className="experience-heading">Experiences</h1> */}
-            <h1 className="text-4xl md:text-5xl font-semibold text-center mb-10">
+            <h1 className="text-4xl md:text-6xl font-semibold text-center mb-10">
               Experiences
             </h1>
             <div className="experience-cards-div">
