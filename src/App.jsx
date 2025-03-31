@@ -26,10 +26,11 @@ import { useLocalStorage } from "./hooks/useLocalStorage.js";
 import { StyleProvider } from "./contexts/StyleContext.js";
 
 import Experience from "./components/Experience";
+import EducationAccord from "./components/Education/educationAccord/EducationAccord.jsx";
+import Education from "./components/Education/education/Education.jsx";
 
 // import Education from "./Advanced/containers/education/Education.jsx";
 // import ProjectsAccord from "./Advanced/containers/projectsAccord/Projects.jsx";
-// import EducationAccord from "./Advanced/containers/educationAccord/EducationAccord.jsx";
 
 // Home Component: Displays the main content of the homepage
 const Home = React.forwardRef(({ theme }, ref) => (
@@ -50,6 +51,8 @@ const Home = React.forwardRef(({ theme }, ref) => (
         resume={about.resume}
       />
     ) : null}
+    <EducationAccord theme={theme} />
+    <Education />
     <Experience theme={theme} />
     <Project
       heading={repos.heading}

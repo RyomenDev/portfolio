@@ -4,12 +4,13 @@ import splashAnimation from "../assets/lottie/splashAnimation";
 
 // Import images directly
 import profileImage from "../assets/img/AkashMishra.jpg";
+//
 import vivafit from "../assets/img/vivafit.png";
 import Weboin from "../assets/img/Weboin.png";
 import CodeNetra from "../assets/img/codeNetra.png";
-import facebookLogo from "../assets/images/facebookLogo.png";
-import quoraLogo from "../assets/images/quoraLogo.png";
-import airbnbLogo from "../assets/images/airbnbLogo.png";
+//
+import School from "../assets/img/School.png";
+import College from "../assets/img/College.png";
 
 import linkedinIcon from "../assets/svg/linkedin-brands-solid.svg";
 import githubIcon from "../assets/svg/github-brands-solid.svg";
@@ -206,7 +207,6 @@ const getInTouch = {
   email: "ai.akash.mishra@gmail.com", // Contact email
 };
 
-
 const seoData = {
   title: "Akash Mishra | Full Stack Developer | MERN Stack Expert",
   author: "Akash Mishra",
@@ -291,6 +291,31 @@ const competitiveSites = {
   ],
 };
 
+const educationInfo = {
+  display: true, // Set false to hide this section, defaults to true
+  schools: [
+    {
+      schoolName: "Indian Institute of Information Technology Ranchi",
+      logo: College,
+      subHeader: "B.tech in Computer Science & Engineering",
+      duration: "📅 2021 – 2025",
+      desc: "Participated in the research of XXX and published 3 papers.",
+      descBullets: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      ],
+    },
+    {
+      schoolName: "Radiant Central Children Academy",
+      logo: School,
+      subHeader: "Senior Secondary (Class 12)",
+      duration: "📅 2018 – 2020",
+      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
+      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"],
+    },
+  ],
+};
+
 const experience = {
   title: "Experience",
   subtitle: "Work, Internship, and Volunteering",
@@ -362,6 +387,7 @@ export {
   competitiveSites,
   splashScreen,
   greeting,
+  educationInfo,
   experience,
   workExperiences,
 };
