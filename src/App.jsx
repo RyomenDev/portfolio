@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import SEO from "./components/SEO";
 import {
+  splashScreen,
   navBar,
   mainBody,
   about,
@@ -21,6 +22,15 @@ import Navbar from "./components/Navbar";
 import GetInTouch from "./components/home/GetInTouch";
 import Experience from "./components/home/Experience";
 import SkillsSection from "./components/home/skillsSection";
+
+import SplashScreen from "./components/startup/splashScreen/SplashScreen.jsx";
+import { useLocalStorage } from "./hooks/useLocalStorage.js";
+import { StyleProvider } from "./contexts/StyleContext.js";
+// import Education from "./Advanced/containers/education/Education.jsx";
+// import WorkExperience from "./Advanced/containers/workExperience/WorkExperience";
+// import ExperienceAccordion from "./Advanced/containers/experienceAccord/ExperienceAccording.jsx";
+// import ProjectsAccord from "./Advanced/containers/projectsAccord/Projects.jsx";
+// import EducationAccord from "./Advanced/containers/educationAccord/EducationAccord.jsx";
 
 // Home Component: Displays the main content of the homepage
 const Home = React.forwardRef((props, ref) => (
@@ -55,26 +65,56 @@ const Home = React.forwardRef((props, ref) => (
 Home.displayName = "Home";
 
 // App Component: Contains routing and layout of the website
-const App = () => {
+const App = ({ theme }) => {
   const titleRef = useRef();
+  const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
+  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
+    useState(true);
+
+  useEffect(() => {
+    if (splashScreen.enabled) {
+      const splashTimer = setTimeout(
+        () => setIsShowingSplashAnimation(false),
+        splashScreen.duration
+      );
+      return () => clearTimeout(splashTimer);
+    }
+  }, []);
+
+  const changeTheme = () => {
+    setIsDark(!isDark);
+  };
 
   return (
     <>
       {/* <SEO seoData={seoData} /> */}
-      <div className="md:px-10 bg-gray-200">
-        <Navbar ref={titleRef} />
+      <div className={isDark ? "dark-mode" : null}>
+        <StyleProvider value={{ isDark: isDark, changeTheme: changeTheme }}>
+          {isShowingSplashAnimation && splashScreen.enabled ? (
+            <SplashScreen />
+          ) : (
+            <>
+              <div className="md:px-10 bg-gray-200">
+                <Navbar ref={titleRef} />
 
-        <div className="content-wrapper">
-          <BrowserRouter basename={import.meta.env.BASE_URL}>
-            <Routes>
-              <Route path="/" element={<Home ref={titleRef} />} />
-            </Routes>
+                <div className="content-wrapper">
+                  <BrowserRouter basename={import.meta.env.BASE_URL}>
+                    <Routes>
+                      <Route path="/" element={<Home ref={titleRef} />} />
+                    </Routes>
 
-            <Footer>
-              {getInTouch.show && <GetInTouch getInTouch={getInTouch} />}
-            </Footer>
-          </BrowserRouter>
-        </div>
+                    <Footer>
+                      {getInTouch.show && (
+                        <GetInTouch getInTouch={getInTouch} />
+                      )}
+                    </Footer>
+                  </BrowserRouter>
+                </div>
+              </div>
+            </>
+          )}
+        </StyleProvider>
       </div>
     </>
   );

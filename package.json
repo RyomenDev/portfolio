@@ -12,11 +12,14 @@
   "dependencies": {
     "@iconify/react": "^5.0.2",
     "axios": "^1.7.7",
-    "framer-motion": "^11.11.9",
+    "colorthief": "^2.6.0",
+    "framer-motion": "^11.18.2",
+    "lottie-react": "^2.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-easy-emoji": "^1.8.1",
     "react-helmet": "^6.1.0",
+    "react-icons": "^5.5.0",
     "react-loading-skeleton": "^3.5.0",
     "react-lottie": "^1.2.4",
     "react-responsive-carousel": "^3.2.23",
@@ -24,6 +27,8 @@
     "react-typewriter-effect": "^1.1.0",
     "react-typist-component": "^1.1.1",
     "reactstrap": "^9.2.3",
+    "sass": "^1.86.0",
+    "styled-components": "^6.1.16",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

@@ -1,5 +1,6 @@
 import emoji from "react-easy-emoji";
 import { Icon } from "@iconify/react";
+import splashAnimation from "../assets/lottie/splashAnimation"; 
 
 // Import images directly
 import profileImage from "../assets/img/AkashMishra.jpg";
@@ -9,6 +10,23 @@ import CodeNetra from "../assets/img/codeNetra.png";
 
 import linkedinIcon from "../assets/svg/linkedin-brands-solid.svg";
 import githubIcon from "../assets/svg/github-brands-solid.svg";
+
+const splashScreen = {
+  enabled: true, // set false to disable splash screen
+  animation: splashAnimation,
+  duration: 2000, // Set animation duration as per your animation
+};
+
+const greeting = {
+  username: "Akash Mishra",
+  title: "Hi all, I'm Akash Mishra",
+  subTitle: emoji(
+    "A passionate Full Stack Software Developer 🚀 having an experience of building Web applications with JavaScript / Reactjs / Nodejs  and some other cool libraries and frameworks."
+  ),
+  resumeLink:
+    "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing", // Set to empty to hide the button
+  displayGreeting: true, // Set false to hide this section, defaults to true
+};
 
 // Navigation Bar Configuration
 const navBar = {
@@ -243,6 +261,66 @@ const seoData = {
   ],
 };
 
+const projectsHeader = {
+  title: "Projects",
+  description:
+    "My projects makes use of vast variety of latest technology tools. My best experience is to create Data Science projects and deploy them to web applications using cloud infrastructure.",
+  avatar_image_path: "projects_image.svg",
+};
+
+const competitiveSites = {
+  competitiveSites: [
+    {
+      siteName: "LeetCode",
+      iconifyClassname: "simple-icons:leetcode",
+      style: {
+        color: "#F79F1B",
+      },
+      profileLink: "#",
+    },
+    {
+      siteName: "HackerRank",
+      iconifyClassname: "simple-icons:hackerrank",
+      style: {
+        color: "#2EC866",
+      },
+      profileLink: "#",
+    },
+    {
+      siteName: "Codechef",
+      iconifyClassname: "simple-icons:codechef",
+      style: {
+        color: "#5B4638",
+      },
+      profileLink: "#",
+    },
+    {
+      siteName: "Codeforces",
+      iconifyClassname: "simple-icons:codeforces",
+      style: {
+        color: "#1F8ACB",
+      },
+      profileLink: "#",
+    },
+    {
+      siteName: "Hackerearth",
+      iconifyClassname: "simple-icons:hackerearth",
+      style: {
+        color: "#323754",
+      },
+      profileLink: "#",
+    },
+    {
+      siteName: "Kaggle",
+      iconifyClassname: "simple-icons:kaggle",
+      style: {
+        color: "#20BEFF",
+      },
+      profileLink: "#",
+    },
+  ],
+};
+
 export {
   navBar,
   mainBody,
@@ -253,4 +331,8 @@ export {
   getInTouch,
   experiences,
   seoData,
+  projectsHeader,
+  competitiveSites,
+  splashScreen,
+  greeting,
 };
