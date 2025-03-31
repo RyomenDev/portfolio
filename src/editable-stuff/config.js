@@ -304,7 +304,7 @@ const workExperiences = {
   experience: [
     {
       role: "Frontend Developer Intern",
-      company: "Facebook",
+      company: "CodeNetra",
       companylogo: CodeNetra,
       date: "Dec-25 – Present",
       desc: "Worked on developing user interfaces and implementing core functionalities using React.js, ensuring a seamless and responsive user experience. Contributed to frontend optimization, backend development, and cloud integration while collaborating with teams to refine UI/UX and enhance application performance.",
