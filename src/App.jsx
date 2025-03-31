@@ -8,7 +8,6 @@ import {
   about,
   repos,
   getInTouch,
-  experiences,
   skills,
   //   seoData,
 } from "./editable-stuff/config";
@@ -20,20 +19,20 @@ import Project from "./components/home/Project";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import GetInTouch from "./components/home/GetInTouch";
-import Experience from "./components/home/Experience";
 import SkillsSection from "./components/home/skillsSection";
 
 import SplashScreen from "./components/startup/splashScreen/SplashScreen.jsx";
 import { useLocalStorage } from "./hooks/useLocalStorage.js";
 import { StyleProvider } from "./contexts/StyleContext.js";
+
+import Experience from "./components/Experience";
+
 // import Education from "./Advanced/containers/education/Education.jsx";
-// import WorkExperience from "./Advanced/containers/workExperience/WorkExperience";
-// import ExperienceAccordion from "./Advanced/containers/experienceAccord/ExperienceAccording.jsx";
 // import ProjectsAccord from "./Advanced/containers/projectsAccord/Projects.jsx";
 // import EducationAccord from "./Advanced/containers/educationAccord/EducationAccord.jsx";
 
 // Home Component: Displays the main content of the homepage
-const Home = React.forwardRef((props, ref) => (
+const Home = React.forwardRef(({ theme }, ref) => (
   <div className="pt-16">
     <MainBody
       gradient={mainBody.gradientColors}
@@ -51,7 +50,7 @@ const Home = React.forwardRef((props, ref) => (
         resume={about.resume}
       />
     ) : null}
-    <Experience experiences={experiences} />
+    <Experience theme={theme} />
     <Project
       heading={repos.heading}
       username={repos.gitHubUsername}
@@ -101,7 +100,10 @@ const App = ({ theme }) => {
                 <div className="content-wrapper">
                   <BrowserRouter basename={import.meta.env.BASE_URL}>
                     <Routes>
-                      <Route path="/" element={<Home ref={titleRef} />} />
+                      <Route
+                        path="/"
+                        element={<Home ref={titleRef} theme={theme} />}
+                      />
                     </Routes>
 
                     <Footer>

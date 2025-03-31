@@ -1,12 +1,15 @@
 import emoji from "react-easy-emoji";
 import { Icon } from "@iconify/react";
-import splashAnimation from "../assets/lottie/splashAnimation"; 
+import splashAnimation from "../assets/lottie/splashAnimation";
 
 // Import images directly
 import profileImage from "../assets/img/AkashMishra.jpg";
 import vivafit from "../assets/img/vivafit.png";
 import Weboin from "../assets/img/Weboin.png";
 import CodeNetra from "../assets/img/codeNetra.png";
+import facebookLogo from "../assets/images/facebookLogo.png";
+import quoraLogo from "../assets/images/quoraLogo.png";
+import airbnbLogo from "../assets/images/airbnbLogo.png";
 
 import linkedinIcon from "../assets/svg/linkedin-brands-solid.svg";
 import githubIcon from "../assets/svg/github-brands-solid.svg";
@@ -203,39 +206,6 @@ const getInTouch = {
   email: "ai.akash.mishra@gmail.com", // Contact email
 };
 
-// Experiences Section Configuration
-const experiences = {
-  show: true, // Show the experiences section
-  heading: "Experiences",
-  data: [
-    {
-      role: "Frontend Developer", // Role title
-      companyLogo: CodeNetra,
-      completionLetter: "#",
-      date: "Dec-25 – Present", // Duration
-      description:
-        "I worked on developing user interfaces and implementing core functionalities for company projects using React.js, ensuring a seamless and responsive user experience. I contributed to frontend optimization, state management, and component-based architecture to enhance performance. Additionally, I worked on backend development using Django, implementing key features and APIs for efficient data handling. I also integrated AWS services like EC2 for hosting and S3 for scalable storage solutions. My role involved collaborating with teams to refine UI/UX, troubleshoot issues, and ensure the development of robust, efficient, and scalable applications. ",
-    },
-    {
-      role: "Web Development Intern", // Role title
-      companyLogo: vivafit,
-      completionLetter:
-        "https://drive.google.com/file/d/1vsXcwlx-J5thWsvQycWRDgeNuaeEvzR4/view",
-      date: "June 2024 – July 2024", // Duration
-      description:
-        "During my internship, I developed an Exercise Tracker and Healthy Eats platform using the MERN stack to enhance user health management. The Exercise Tracker enables users to log workouts, track durations, filter exercises by category, and search for specific routines. It features secure authentication, real-time data updates, and a personalized profile system. Healthy Eats focuses on personalized meal planning by integrating nutrition APIs to provide dietary recommendations. I implemented an admin panel for recipe management and designed an intuitive UI for better user experience. Both applications ensure seamless interaction, security, and efficiency in fitness and nutrition tracking. ",
-    },
-    {
-      role: "Full Stack Developer", // Role title
-      companyLogo: Weboin,
-      completionLetter:
-        "https://drive.google.com/file/d/17cYPi3Bm7sLyyfzAbMrbBjFUdl9n3dL1/view",
-      date: "June 2023 – July 2023", // Duration
-      description:
-        "I developed a dynamic E-commerce platform using React and MongoDB, focusing on API-driven product management and an intuitive UI with real-time updates. I built the frontend with React Hooks for a responsive user experience and implemented a secure backend to manage user data, product catalogs, and orders efficiently. Additionally, I integrated JWT authentication for security and utilized the Google Maps API to optimize delivery logistics, enabling precise location identification. By optimizing database architecture and ensuring fast API response times, I contributed to creating a scalable and high-performance platform capable of handling heavy traffic smoothly.",
-    },
-  ],
-};
 
 const seoData = {
   title: "Akash Mishra | Full Stack Developer | MERN Stack Expert",
@@ -321,6 +291,64 @@ const competitiveSites = {
   ],
 };
 
+const experience = {
+  title: "Experience",
+  subtitle: "Work, Internship, and Volunteering",
+  description: `Worked as a Full Stack Developer in multiple startups, gaining hands-on experience in building scalable web applications. Expertise includes developing robust backend services, optimizing database performance, implementing real-time features using WebSockets, integrating Google Maps API, working with AWS cloud services, UI/UX design, and API integration.
+    Beyond tech, I have volunteered with NGOs, actively contributing to cancer awareness and prevention campaigns as well as child education initiatives.`,
+  header_image_path: "experience.svg",
+};
+
+const workExperiences = {
+  display: true, //Set it to true to show workExperiences Section
+  experience: [
+    {
+      role: "Frontend Developer Intern",
+      company: "Facebook",
+      companylogo: CodeNetra,
+      date: "Dec-25 – Present",
+      desc: "Worked on developing user interfaces and implementing core functionalities using React.js, ensuring a seamless and responsive user experience. Contributed to frontend optimization, backend development, and cloud integration while collaborating with teams to refine UI/UX and enhance application performance.",
+      descBullets: [
+        "Developed and optimized frontend using React.js with a component-based architecture.",
+        "Implemented state management and performance enhancements.",
+        "Built backend features and APIs using Django for efficient data handling.",
+        "Integrated AWS services like EC2 for hosting and S3 for scalable storage.",
+        "Collaborated with teams to refine UI/UX and troubleshoot application issues.",
+        "Ensured the development of robust, efficient, and scalable applications.",
+      ],
+    },
+    {
+      role: "Web Developer Intern",
+      company: "Vivafit",
+      companylogo: vivafit,
+      date: "June 2024 – July 2024",
+      desc: "Developed an Exercise Tracker and a Healthy Eats platform using the MERN stack to enhance user health management. Focused on secure authentication, real-time updates, and an intuitive UI to improve user experience in fitness and nutrition tracking.",
+      descBullets: [
+        "Built an Exercise Tracker enabling users to log workouts, track durations, and filter exercises by category.",
+        "Implemented secure authentication and a personalized profile system.",
+        "Integrated real-time data updates for seamless interaction.",
+        "Developed a Healthy Eats platform with personalized meal planning and nutrition API integration.",
+        "Designed an admin panel for efficient recipe management.",
+        "Ensured security, efficiency, and an intuitive UI for both applications.",
+      ],
+    },
+    {
+      role: "Full Stack Developer Intern",
+      company: "Weboin",
+      companylogo: Weboin,
+      date: "June 2023 – July 2023",
+      desc: "Developed a dynamic E-commerce platform using React and MongoDB, focusing on API-driven product management, real-time updates, and an optimized user experience. Ensured security, scalability, and efficiency in handling user data, product catalogs, and order processing.",
+      descBullets: [
+        "Built a responsive frontend using React Hooks for seamless user interaction.",
+        "Designed a secure backend for managing users, products, and orders.",
+        "Implemented JWT authentication to ensure secure user access.",
+        "Integrated Google Maps API for optimized delivery logistics and precise location identification.",
+        "Optimized database architecture for fast API response times and high-performance scalability.",
+      ],
+    },
+  ],
+};
+
 export {
   navBar,
   mainBody,
@@ -329,10 +357,11 @@ export {
   skills,
   leadership,
   getInTouch,
-  experiences,
   seoData,
   projectsHeader,
   competitiveSites,
   splashScreen,
   greeting,
+  experience,
+  workExperiences,
 };
