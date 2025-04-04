@@ -3,6 +3,7 @@ import "./card.scss";
 import "./projects.scss";
 import { projectsData } from "../../../editable-stuff/config.js";
 import ProjectCard from "./projectCard.jsx";
+import { projectsHeader } from "../../../editable-stuff/config.js";
 
 const Projects = () => {
   return (
@@ -35,6 +36,17 @@ const Projects = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="text-center mt-6">
+        <a
+          href={`https://github.com/${projectsHeader.username}?tab=repositories`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          More on GitHub
+        </a>
       </div>
     </div>
   );

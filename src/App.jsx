@@ -9,6 +9,7 @@ import {
   repos,
   getInTouch,
   skills,
+  skillsCollection,
   //   seoData,
 } from "./editable-stuff/config";
 
@@ -28,6 +29,7 @@ import { StyleProvider } from "./contexts/StyleContext.js";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Project from "./components/Projects";
+import Skills from "./components/skills";
 
 const Home = React.forwardRef(({ theme }, ref) => (
   <div className="pt-16">
@@ -50,7 +52,7 @@ const Home = React.forwardRef(({ theme }, ref) => (
     <Education theme={theme} />
     <Experience theme={theme} />
     <Project theme={theme} />
-    <SkillsSection skillsSection={skills} />
+    <Skills theme={theme} />
   </div>
 ));
 

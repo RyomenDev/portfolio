@@ -111,13 +111,13 @@ const leadership = {
   },
 };
 
-const skills = {
+const skillsCollection = {
   title: "What I do",
   subTitle:
     "FULL STACK DEVELOPER WHO WANTS TO EXPLORE and utilize cutting-edge technologies to create innovative, user-centric applications.",
   data: [
     {
-      title: "Full Stack Development",
+      title: "Skills Collection",
       skills: [
         {
           text: "Building responsive and dynamic web applications using React.js & Redux",
@@ -195,6 +195,315 @@ const skills = {
   ],
 };
 
+const skills = {
+  data: [
+    {
+      title: "Full Stack Development",
+      fileName: "FullStackImg",
+      skills: [
+        "⚡ Developing dynamic and responsive user interfaces for web and mobile platforms",
+        "⚡ Designing and integrating scalable backend architectures for seamless data flow",
+        "⚡ Implementing real-time communication and AI-powered features to enhance user experience",
+      ],
+      softwareSkills: [
+        {
+          skillName: "HTML5",
+          fontAwesomeClassname: "simple-icons:html5",
+          style: {
+            color: "#E34F26",
+          },
+        },
+        {
+          skillName: "CSS3",
+          fontAwesomeClassname: "fa-css3",
+          style: {
+            color: "#1572B6",
+          },
+        },
+        {
+          skillName: "Sass",
+          fontAwesomeClassname: "simple-icons:sass",
+          style: {
+            color: "#CC6699",
+          },
+        },
+        {
+          skillName: "JavaScript",
+          fontAwesomeClassname: "simple-icons:javascript",
+          style: {
+            backgroundColor: "#000000",
+            color: "#F7DF1E",
+          },
+        },
+        {
+          skillName: "ReactJS",
+          fontAwesomeClassname: "simple-icons:react",
+          style: {
+            color: "#61DAFB",
+          },
+        },
+        {
+          skillName: "NodeJS",
+          fontAwesomeClassname: "devicon-plain:nodejs-wordmark",
+          style: {
+            color: "#339933",
+          },
+        },
+        {
+          skillName: "NPM",
+          fontAwesomeClassname: "simple-icons:npm",
+          style: {
+            color: "#CB3837",
+          },
+        },
+        {
+          skillName: "Firebase",
+          fontAwesomeClassname: "logos:firebase",
+          style: {
+            color: "#2C8EBB",
+          },
+        },
+        {
+          skillName: "Gemini",
+          fontAwesomeClassname: "logos:gemini",
+          style: { color: "#00BCD4" }, // Cyan
+        },
+        {
+          skillName: "Puppeteer",
+          fontAwesomeClassname: "logos:puppeteer",
+          style: { color: "#40B5A4" }, // Sea Green
+        },
+        {
+          skillName: "OpenAI",
+          fontAwesomeClassname: "logos:openai",
+          style: { color: "#412991" }, // Deep Purple
+        },
+        {
+          skillName: "Redux",
+          fontAwesomeClassname: "logos:redux",
+          style: { color: "#764ABC" }, // Official Redux Purple
+        },
+        {
+          skillName: "Tailwind CSS",
+          fontAwesomeClassname: "logos:tailwindcss-icon",
+          style: { color: "#38BDF8" }, // Official Tailwind Blue
+        },
+        {
+          skillName: "Elastic Stack",
+          fontAwesomeClassname: "logos:elasticsearch",
+          style: { color: "#FEC514" }, // Elastic Yellow
+        },
+        {
+          skillName: "Strapi",
+          fontAwesomeClassname: "logos:strapi",
+          style: { color: "#8E75FF" }, // Strapi Purple
+        },
+        {
+          skillName: "WebSockets",
+          fontAwesomeClassname: "logos:websocket",
+          style: { color: "#FA7E1E" }, // Orange
+        },
+        // {
+        //   skillName: "Yarn",
+        //   fontAwesomeClassname: "simple-icons:yarn",
+        //   style: {
+        //     color: "#2C8EBB",
+        //   },
+        // },
+        // {
+        //   skillName: "Gatsby",
+        //   fontAwesomeClassname: "simple-icons:gatsby",
+        //   style: {
+        //     color: "#663399",
+        //   },
+        // },
+        // {
+        //   skillName: "Flutter",
+        //   fontAwesomeClassname: "simple-icons:flutter",
+        //   style: {
+        //     color: "#02569B",
+        //   },
+        // },
+      ],
+    },
+    {
+      title: "Cloud Infra-Architecture",
+      fileName: "CloudInfraImg",
+      skills: [
+        "⚡ Experience working on multiple cloud platforms",
+        "⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases",
+        "⚡ Managing media storage, content delivery, and real-time data syncing across services",
+        "⚡ Working with backend infrastructure, including databases and cloud-hosted APIs",
+      ],
+      softwareSkills: [
+        {
+          skillName: "AWS",
+          fontAwesomeClassname: "simple-icons:amazonaws",
+          style: {
+            color: "#FF9900",
+          },
+        },
+        {
+          skillName: "Firebase",
+          fontAwesomeClassname: "simple-icons:firebase",
+          style: {
+            color: "#FFCA28",
+          },
+        },
+        {
+          skillName: "Vercel",
+          fontAwesomeClassname: "logos:vercel-icon",
+          style: {
+            color: "#336791",
+          },
+        },
+        {
+          skillName: "Cloudinary",
+          fontAwesomeClassname: "logos:cloudinary",
+          style: {
+            color: "#E34F26",
+          },
+        },
+        {
+          skillName: "MongoDB",
+          fontAwesomeClassname: "simple-icons:mongodb",
+          style: {
+            color: "#47A248",
+          },
+        },
+        {
+          skillName: "Docker",
+          fontAwesomeClassname: "simple-icons:docker",
+          style: {
+            color: "#1488C6",
+          },
+        },
+        {
+          skillName: "Heroku",
+          fontAwesomeClassname: "logos:heroku-icon",
+          style: {
+            color: "#326CE5",
+          },
+        },
+        // {
+        //   skillName: "Kubernetes",
+        //   fontAwesomeClassname: "simple-icons:kubernetes",
+        //   style: {
+        //     color: "#326CE5",
+        //   },
+        // },
+        // {
+        //   skillName: "GCP",
+        //   fontAwesomeClassname: "simple-icons:googlecloud",
+        //   style: {
+        //     color: "#4285F4",
+        //   },
+        // },
+        // {
+        //   skillName: "Azure",
+        //   fontAwesomeClassname: "simple-icons:microsoftazure",
+        //   style: {
+        //     color: "#0089D6",
+        //   },
+        // },
+        // {
+        //   skillName: "PostgreSQL",
+        //   fontAwesomeClassname: "simple-icons:postgresql",
+        //   style: {
+        //     color: "#336791",
+        //   },
+        // },
+      ],
+    },
+    {
+      title: "Tools & Platforms I Use",
+      fileName: "DesignImg", // keep your illustration/animation name the same if still appropriate
+      skills: [
+        "⚡ Designing highly attractive user interfaces for web applications",
+        "⚡ Managing APIs, backends, and headless CMS platforms efficiently",
+        "⚡ Optimizing development and testing workflows with modern developer tools",
+      ],
+      softwareSkills: [
+        {
+          skillName: "Strapi",
+          fontAwesomeClassname: "logos:strapi",
+          style: { color: "#8E75FF" },
+        },
+        {
+          skillName: "Appwrite",
+          fontAwesomeClassname: "logos:appwrite-icon",
+          style: { color: "#F02E65" },
+        },
+        {
+          skillName: "VS Code",
+          fontAwesomeClassname: "simple-icons:visualstudiocode",
+          style: { color: "#007ACC" },
+        },
+        {
+          skillName: "Git",
+          fontAwesomeClassname: "simple-icons:git",
+          style: { color: "#F1502F" },
+        },
+        {
+          skillName: "GitHub",
+          fontAwesomeClassname: "simple-icons:github",
+          style: { color: "#181717" },
+        },
+        {
+          skillName: "Postman",
+          fontAwesomeClassname: "simple-icons:postman",
+          style: { color: "#FF6C37" },
+        },
+        {
+          skillName: "Swagger API",
+          fontAwesomeClassname: "simple-icons:swagger",
+          style: { color: "#85EA2D" },
+        },
+      ],
+    },
+
+    // {
+    //   title: "UI/UX Design",
+    //   fileName: "DesignImg",
+    //   skills: [
+    //     "⚡ Designing highly attractive user interface for mobile and web applications",
+    //     "⚡ Customizing logo designs and building logos from scratch",
+    //     "⚡ Creating the flow of application functionalities to optimize user experience",
+    //   ],
+    //   softwareSkills: [
+    //     {
+    //       skillName: "Adobe XD",
+    //       fontAwesomeClassname: "simple-icons:adobexd",
+    //       style: {
+    //         color: "#FF2BC2",
+    //       },
+    //     },
+    //     {
+    //       skillName: "Figma",
+    //       fontAwesomeClassname: "simple-icons:figma",
+    //       style: {
+    //         color: "#F24E1E",
+    //       },
+    //     },
+    //     {
+    //       skillName: "Adobe Illustrator",
+    //       fontAwesomeClassname: "simple-icons:adobeillustrator",
+    //       style: {
+    //         color: "#FF7C00",
+    //       },
+    //     },
+    //     {
+    //       skillName: "Inkscape",
+    //       fontAwesomeClassname: "simple-icons:inkscape",
+    //       style: {
+    //         color: "#000000",
+    //       },
+    //     },
+    //   ],
+    // },
+  ],
+};
+
 const getInTouch = {
   show: true,
   heading: "Get In Touch",
@@ -231,6 +540,7 @@ const seoData = {
 
 const projectsHeader = {
   title: "Projects",
+  gitHubUsername: "RyomenDev",
   description:
     "My projects leverage the latest web technologies to build scalable and efficient applications. I specialize in full-stack development, integrating real-time features, cloud services, and optimized database solutions to enhance user experience and performance. I also deploy web applications using cloud infrastructure for better scalability and reliability.",
   avatar_image_path: "projects_image.svg",
@@ -455,10 +765,12 @@ export {
   mainBody,
   about,
   repos,
-  skills,
   leadership,
   getInTouch,
   seoData,
+  //
+  skills,
+  skillsCollection,
   //
   splashScreen,
   greeting,
