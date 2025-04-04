@@ -1,58 +1,28 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import React, { useRef, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import SEO from "./components/SEO";
-import {
-  splashScreen,
-  navBar,
-  mainBody,
-  about,
-  repos,
-  getInTouch,
-  skills,
-  skillsCollection,
-  //   seoData,
-} from "./editable-stuff/config";
-
-// Direct imports for components (no lazy loading)
-import MainBody from "./components/home/MainBody";
-import AboutMe from "./components/home/AboutMe";
-// import Project from "./components/home/Project";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import GetInTouch from "./components/home/GetInTouch";
-import SkillsSection from "./components/home/skillsSection";
+import { splashScreen } from "./editable-stuff/config";
 
 import SplashScreen from "./components/startup/splashScreen/SplashScreen.jsx";
 import { useLocalStorage } from "./hooks/useLocalStorage.js";
 import { StyleProvider } from "./contexts/StyleContext.js";
 
+import Greetings from "./components/Greeting";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Project from "./components/Projects";
 import Skills from "./components/skills";
+import Contact from "./components/Contact";
 
 const Home = React.forwardRef(({ theme }, ref) => (
   <div className="pt-16">
-    <MainBody
-      gradient={mainBody.gradientColors}
-      title={`${mainBody.firstName} ${mainBody.middleName} ${mainBody.lastName}`}
-      message={mainBody.message}
-      icons={mainBody.icons}
-      ref={ref}
-    />
-    {about.show ? (
-      <AboutMe
-        heading={about.heading}
-        message={about.message}
-        profileImage={about.imageLink}
-        imgSize={about.imageSize}
-        resume={about.resume}
-      />
-    ) : null}
+    <Greetings theme={theme} />
     <Education theme={theme} />
     <Experience theme={theme} />
     <Project theme={theme} />
     <Skills theme={theme} />
+    <Contact />
   </div>
 ));
 
@@ -90,7 +60,7 @@ const App = ({ theme }) => {
           ) : (
             <>
               <div className="md:px-10 bg-gray-200">
-                <Navbar ref={titleRef} />
+                {/* <Navbar ref={titleRef} /> */}
 
                 <div className="content-wrapper">
                   <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -100,12 +70,6 @@ const App = ({ theme }) => {
                         element={<Home ref={titleRef} theme={theme} />}
                       />
                     </Routes>
-
-                    <Footer>
-                      {getInTouch.show && (
-                        <GetInTouch getInTouch={getInTouch} />
-                      )}
-                    </Footer>
                   </BrowserRouter>
                 </div>
               </div>
