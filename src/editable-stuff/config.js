@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import splashAnimation from "../assets/lottie/splashAnimation";
 
 // Import images directly
-import profileImage from "../assets/img/AkashMishra.jpg";
+import profileImage from "../assets/img/3.png";
 //
 import vivafit from "../assets/img/vivafit.png";
 import Weboin from "../assets/img/Weboin.png";

@@ -28,18 +28,19 @@ export default function Contact() {
       }`}
     >
       {/* Heading */}
-      <h2 className="w-full text-5xl md:text-7xl font-bold text-center md:text-left mb-6 order-1 contact-title">
-        {heading}
+      <h2 className="w-full text-5xl md:text-7xl md:text-left mb-6 order-1 contact-title">
+        <h1 className="header-topic"> {heading}</h1>
       </h2>
 
       {/* Image */}
       <div className="w-full flex justify-center mb-6 md:mb-0 md:w-auto order-2 md:order-3">
-        <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64">
-          <div className="absolute inset-0 bg-blue-200 rounded-full animate-pulse"></div>
+        <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72">
+          <div className="absolute inset-0 bg-blue-50 rounded-full animate-pulse "></div>
           <img
             src={imageLink}
             alt="Profile"
             className="relative w-full h-full object-cover rounded-full border-4 border-blue-500 shadow-xl"
+            // className="relative w-full h-full object-cover"
           />
         </div>
       </div>

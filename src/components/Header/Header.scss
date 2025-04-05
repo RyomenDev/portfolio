@@ -2,7 +2,7 @@
 
 /*React-headroom*/
 .headroom-wrapper {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
   max-height: 100px;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .header {
-    background-color: $lightBackground1;
+  background-color: $lightBackground1;
   max-width: 100%;
   padding: 15px 20px;
   margin: 0px auto;
@@ -67,7 +67,7 @@
   font-weight: bold;
   font-variant-ligatures: no-common-ligatures;
   -webkit-font-variant-ligatures: no-common-ligatures;
-  padding: 0 10px;
+  // padding: 0 10px;
 }
 
 /* menu */
@@ -161,7 +161,6 @@
 
 /* 48em = 768px */
 @media (min-width: 48em) {
-    
 }
 @media (min-width: 86em) {
   .header li {

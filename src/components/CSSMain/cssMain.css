@@ -1,0 +1,16 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Google+Sans&display=swap'); */
+
+.header-topic {
+    font-size: 60px;
+    line-height: normal;
+    /* font-family: 'Google Sans', sans-serif; */
+    font-family: "Google Sans Regular";
+    /* border-radius: 4px; */
+    /* border: 1px solid #ef4444; */
+    text-align: center;
+    margin: 0 auto;
+    /* centers the block itself */
+    /* width: fit-content; */
+    /* optional: shrink to content */
+    /* color: #ef4444; */
+}

@@ -9,7 +9,7 @@ import Typewriter from "typewriter-effect";
 export default function Greeting({ theme }) {
   return (
     <>
-      <div className="greeting-typewriter my-1" style={{ color: theme.text }}>
+      <div className="greeting-typewriter my-1 mx-4 md:mx-0" style={{ color: theme.text }}>
         <Typewriter
           options={{
             strings: [greeting.message],
@@ -48,7 +48,7 @@ export default function Greeting({ theme }) {
 
               <SocialMedia theme={theme} />
 
-              <div className="portfolio-repo-btn-div">
+              <div className="portfolio-repo-btn-div flex flex-col">
                 <Button
                   text="Contact me"
                   href="#contact"
@@ -56,9 +56,9 @@ export default function Greeting({ theme }) {
                   newTab={true}
                 />
 
-                <div className="flex gap-2">
+                <div className="flex flex-wrap">
                   {greeting.resumeLink && (
-                    <div className="">
+                    <div className="mr-2">
                       <Button
                         text="View my resume"
                         href={greeting?.resumeLink}

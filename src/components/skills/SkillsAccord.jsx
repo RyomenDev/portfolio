@@ -1,3 +1,4 @@
+import "../CSSMain/cssMain.css"
 import "./Skills.css";
 import SkillSection from "./SkillSection";
 import { motion } from "framer-motion";

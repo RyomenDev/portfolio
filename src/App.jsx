@@ -8,7 +8,7 @@ import SplashScreen from "./components/startup/splashScreen/SplashScreen.jsx";
 import { useLocalStorage } from "./hooks/useLocalStorage.js";
 import { StyleProvider } from "./contexts/StyleContext.js";
 
-import Header from "./components/Header"
+import Header from "./components/Header";
 import Greetings from "./components/Greeting";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -17,14 +17,16 @@ import Skills from "./components/skills";
 import Contact from "./components/Contact";
 
 const Home = React.forwardRef(({ theme }, ref) => (
-  <div className="pt-16">
-    <Header/>
-    <Greetings theme={theme} />
-    <Education theme={theme} />
-    <Experience theme={theme} />
-    <Project theme={theme} />
-    <Skills theme={theme} />
-    <Contact />
+  <div className="pt-0">
+    <Header />
+    <div className="md:px-10">
+      <Greetings theme={theme} />
+      <Education theme={theme} />
+      <Experience theme={theme} />
+      <Project theme={theme} />
+      <Skills theme={theme} />
+      <Contact />
+    </div>
   </div>
 ));
 
@@ -34,7 +36,8 @@ Home.displayName = "Home";
 const App = ({ theme }) => {
   const titleRef = useRef();
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
-  const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  //   const [isDark, setIsDark] = useLocalStorage("isDark", darkPref.matches);
+  const [isDark, setIsDark] = useState(false);
   const [isShowingSplashAnimation, setIsShowingSplashAnimation] =
     useState(true);
 
@@ -61,7 +64,7 @@ const App = ({ theme }) => {
             <SplashScreen />
           ) : (
             <>
-              <div className="md:px-10 bg-gray-200">
+              <div className="bg-gray-200">
                 {/* <Navbar ref={titleRef} /> */}
 
                 <div className="content-wrapper">

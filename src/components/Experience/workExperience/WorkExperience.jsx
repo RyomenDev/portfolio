@@ -4,6 +4,7 @@ import { workExperiences } from "../../../editable-stuff/config.js";
 import { motion } from "framer-motion";
 import StyleContext from "../../../contexts/StyleContext";
 import "./WorkExperience.scss";
+import "../../CSSMain/cssMain.css";
 
 const WorkExperience = () => {
   const { isDark } = useContext(StyleContext);
@@ -17,10 +18,10 @@ const WorkExperience = () => {
       >
         <div className="experience-container" id="workExperience">
           <div>
-            {/* <h1 className="experience-heading">Experiences</h1> */}
-            <h1 className="text-4xl md:text-6xl font-semibold text-center mb-10">
+            <h1 className="header-topic">Experiences</h1>
+            {/* <h1 className="text-4xl md:text-6xl font-semibold text-center mb-10">
               Experiences
-            </h1>
+            </h1> */}
             <div className="experience-cards-div">
               {workExperiences.experience.map((card, i) => {
                 return (

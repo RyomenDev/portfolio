@@ -13,7 +13,12 @@ function Header() {
 
   return (
     <Headroom>
-      <header className={` ${isDark ? "dark-menu header" : "header"}`}>
+      {/* <header className={`fixed overflow-hidden z-50 w-full border-4 border-red-500 ${isDark ? "dark-menu header" : "header"}`}> */}
+      <header
+        className={` top-0 left-0 right-0 z-100 w-full overflow-hidden ${
+          isDark ? "dark-menu header" : "header"
+        }`}
+      >
         <a href="/" className="logo">
           {/* <span className="grey-color"> &lt;</span> */}
           <span className="logo-name md:text-4xl">{greeting.username}</span>
@@ -48,7 +53,7 @@ function Header() {
           </li>
           <li>
             <a>
-              <ToggleSwitch />
+              {/* <ToggleSwitch /> */}
             </a>
           </li>
         </ul>
