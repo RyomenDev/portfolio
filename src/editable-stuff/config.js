@@ -560,10 +560,17 @@ const skills = {
 const getInTouch = {
   show: true,
   heading: "Get In Touch",
+  imageLink: profileImage,
   message: `
-    I'm currently seeking full-time opportunities in Software Development.  
-    If you know of any available positions, have questions, or just want to connect, please feel free to email me at:
+    DISCUSS A PROJECT OR JUST WANT TO SAY HI? MY INBOX IS OPEN FOR ALL.
   `,
+  subMessage: `Frontend Developer @CodeNetra `,
+  //   message: `
+  //     I'm currently seeking full-time opportunities in Software Development.
+  //     If you know of any available positions, have questions, or just want to connect, please feel free to email me at:
+  //   `,
+  number: `+916388940854`,
+  opportunity: "Yes",
   email: "ai.akash.mishra@gmail.com", // Contact email
 };
 
