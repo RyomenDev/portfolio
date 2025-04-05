@@ -8,6 +8,7 @@ import SplashScreen from "./components/startup/splashScreen/SplashScreen.jsx";
 import { useLocalStorage } from "./hooks/useLocalStorage.js";
 import { StyleProvider } from "./contexts/StyleContext.js";
 
+import Header from "./components/Header"
 import Greetings from "./components/Greeting";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -17,6 +18,7 @@ import Contact from "./components/Contact";
 
 const Home = React.forwardRef(({ theme }, ref) => (
   <div className="pt-16">
+    <Header/>
     <Greetings theme={theme} />
     <Education theme={theme} />
     <Experience theme={theme} />
